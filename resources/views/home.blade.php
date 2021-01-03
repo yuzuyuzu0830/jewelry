@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <div id="calendar"></div>
                 </div>
             </div>
         </div>
