@@ -20,4 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/postitems', 'HomeController@postItem');
+
+Route::get('/doneItems', 'DoneItemsController@postItem');
+Route::post('/ajax/doneItems', 'DoneItemsController@addItems');
+Route::post('/ajax/editDate', 'DoneItemsController@editDate');

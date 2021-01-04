@@ -17,26 +17,10 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('home');
     }
 
-    // fullcalendar
-    public function postItem(Request $request)
-    {
-        $done_item = new DoneItem();
-        $done_item->start = $request->input('start');
-        $done_item->items = $request->input('items');
-        $done_item->other = $request->input('other');
 
-
-        $done_item->save();
-        return $done_item;
-    }
 }

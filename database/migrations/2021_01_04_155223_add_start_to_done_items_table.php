@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDoneItemsTable extends Migration
+class AddStartToDoneItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateDoneItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('done_items', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('items')->nullable();
-            $table->string('other', 100)->nullable();
-            $table->date('start');
-            $table->timestamps();
+        Schema::table('done_items', function (Blueprint $table) {
+            //
+            $table->date('start')->after('done_id');
         });
     }
 
@@ -29,6 +26,8 @@ class CreateDoneItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('done_items');
+        Schema::table('done_items', function (Blueprint $table) {
+            //
+        });
     }
 }

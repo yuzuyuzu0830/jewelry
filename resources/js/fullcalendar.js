@@ -5,61 +5,69 @@ import interactionPlugin from '@fullcalendar/interaction';
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
-  var calendar = new Calendar(calendarEl, {
+  var calendar = new FullCalendar.Calendar(calendarEl, {
     allDaySlot: false,
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
     firstDay: 1,
+    events: "/doneItems",
+
+    eventDrop: function(info) {
+      editEventDate(info);
+    },
+    dateClick: function(info) {
+      addEvent(calendar, info);
+    },
   });
 
   calendar.render();
 });
 
-$("#done-btn").click(function () {
-    $.ajaxSetup({
-      headers: {
-        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-      },
+$.ajaxSetup({
+  headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+function addItems(calendar, info) {
+  var title = "jewelry";
+
+  $.ajax ({
+    url: '/ajax/addItems',
+    type: 'POST',
+    dataType: 'json',
+    data: {
+      "title": title,
+      "date": info.dateStr
+    }
+  }) .done(function(result) {
+    calendar.addItems({
+      id:result['done_id'],
+      title:title,
+      start: info.dateSter,
     });
-    var formData = $("#list-items").serialize();
-    console.log(formData);
-
-    $.ajax({
-      type: "post",
-      url: "/postitems",
-      dataType: "json",
-      // serializeしたデータを指定
-      data: formData,
-    })
-      //通信が成功したとき
-      .then((res) => {
-        console.log(res);
-
-        // カレンダーの再描画
-        var calendarEl = document.getElementById("calendar");
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          headerToolbar: {
-            left: "prev,next today",
-            center: "title",
-          },
-          locale: "ja",
-          editable: true,
-          googleCalendarApiKey: "AIzaSyBmTA6PLvASN0Xg-6_6Jqa46kObn_TSWJ8",
-          eventSources: [
-            {
-            //祝日の予定を取得
-              googleCalendarId: "japanese__ja@holiday.calendar.google.com",
-              rendering: "background",
-              color: "#FF6666",
-            },
-          ],
-          events: "/getlist",
-          selectable: true,
-        });
-        calendar.render();
-      })
-      //通信が失敗したとき
-      .fail((error) => {
-        console.log(error.statusText);
-      });
   });
+}
+
+function editDate(info){
+  var done_id = info.event.id;
+  var date = formatDate(info.event.start);
+
+  $.ajax({
+      url: '/ajax/editDate',
+      type: 'POST',
+      data:{
+          "id":done_id,
+          "newDate":date
+          //ドロップしたあとの日付をphp側に渡す
+      }
+  })
+}
+
+function formatDate(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var newDate = year + '-' + month + '-' + day;
+    return newDate;
+}

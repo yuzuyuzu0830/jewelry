@@ -18,20 +18,17 @@
 
                     <div class="done-list">
                         <p>できたこと</p>
-                        {!! Form::open(['url' => '/postitems', 'id' => 'list-items']) !!}
+                        {!! Form::open(['url' => '/ajax/doneItems', 'id' => 'done-items']) !!}
                             {{ Form::token() }}
                             <div class0="done-date">
                                 <label>{{ Form::date('start') }}</label>
                             </div>
-                            <div class="done-checkbox">
-                                    <label>{{ Form::text('items')}}</label>
-                            </div>
-                            <div class="done-other">
-                                <label><input type="checkbox">その他</label>
-                                {{ Form::text('other',null, ['name' => 'other', 'class' => 'other-form']) }}
+                            <div class="post_item">
+                                <label>
+                                {{ Form::text('title',null, ['class' => 'title']) }}</label>
                             </div>
                             <div class="done-submit">
-                                {{ Form::submit('送信',['name' => 'submit', 'id' => 'done-btn']) }}
+                                {{ Form::submit('登録',['id' => 'done-btn']) }}
                             </div>
                         {!! Form::close() !!}
                     </div>
