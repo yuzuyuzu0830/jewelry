@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Models\ExpirationCosme;
+
 
 class ExpirationController extends Controller
 {
@@ -14,6 +17,8 @@ class ExpirationController extends Controller
     public function index()
     {
         //
+        $expiredate = ExpirationCosme::Latest()->get();
+        return response()->json($expiredate);
     }
 
     /**
@@ -35,6 +40,17 @@ class ExpirationController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|max:100',
+            'start' => 'required',
+            'textColor' => 'required'
+        ]);
+
+        if ($validator->failed()) {
+            return redirect()->back();
+        } else {
+            ExpirationCosme::create()($request->all());
+        }
     }
 
     /**
