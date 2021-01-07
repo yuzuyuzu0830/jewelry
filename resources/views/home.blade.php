@@ -16,22 +16,48 @@
 
                     <div id="calendar"></div>
 
-                    <div class="done-list">
-                        <p>できたこと</p>
-                        {!! Form::open(['url' => '/ajax/doneItems', 'id' => 'done-items']) !!}
-                            {{ Form::token() }}
-                            <div class0="done-date">
-                                <label>{{ Form::date('start') }}</label>
+                    <!-- expiration form -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    登録する
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">化粧品の使用期限を登録する</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="post_item">
-                                <label>
-                                {{ Form::text('title',null, ['class' => 'title']) }}</label>
+                            <div class="modal-body">
+                                ...
                             </div>
-                            <div class="done-submit">
-                                {{ Form::submit('登録',['id' => 'done-btn']) }}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
-                        {!! Form::close() !!}
+                            </div>
                     </div>
+                    </div>
+                    <div id="dialog">
+                        <form id="expire-form" method="post">
+                            @csrf
+                            <div class="expire-group">
+                                <div class="expire-group">
+                                <label>商品名<input type="text" class="expire-form" name="title" placeholder="例 製品名/ブランド名"></label>
+                            </div>
+                            <div class="expire-group">
+                                <label>使用期限<input type="date" class="expire-form" name="start"></label>
+                            </div>
+                            <div class="expire-group">
+                                <label>文字の色<input type="color" class="expire-form" name="textColor"></label>
+                            </div>
+                        </form>
+                    </div>
+                    <button id="expire-btn">登録する</button>
                 </div>
             </div>
         </div>

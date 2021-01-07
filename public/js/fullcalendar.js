@@ -10469,7 +10469,7 @@ function unmountComponentAtNode(node) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./main.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/daygrid/main.css?4086");
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./main.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/daygrid/main.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -14395,7 +14395,7 @@ exports.push([module.i, "\n/* classes attached to <body> */\n\n.fc-not-allowed,\
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/daygrid/main.css?4086":
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@fullcalendar/daygrid/main.css":
 /*!*************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/@fullcalendar/daygrid/main.css ***!
   \*************************************************************************************************************************************/
@@ -15055,12 +15055,28 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarEl, {
-    allDaySlot: false,
     plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_2__["default"]],
-    defaultView: 'dayGridMonth',
-    events: []
+    initialView: 'dayGridMonth',
+    firstDay: 1,
+    selectable: true
   });
   calendar.render();
+});
+$('#expire-btn').on('click', function () {
+  $('#dialog').dialog({
+    title: '使用期限を追加する',
+    width: 600,
+    height: 600,
+    modal: true,
+    show: {
+      effect: 'clip',
+      duration: 350
+    },
+    hide: {
+      effect: 'clip',
+      duration: 250
+    }
+  });
 });
 
 /***/ }),

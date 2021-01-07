@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddStartToDoneItemsTable extends Migration
+class CreateExpirationCosmesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddStartToDoneItemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('done_items', function (Blueprint $table) {
-            //
-            $table->date('start')->after('done_id');
+        Schema::create('expiration_cosmes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title', 100);
+            $table->date('start');
+            $table->string('textColor');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class AddStartToDoneItemsTable extends Migration
      */
     public function down()
     {
-        Schema::table('done_items', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('expiration_cosmes');
     }
 }

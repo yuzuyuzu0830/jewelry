@@ -5,69 +5,23 @@ import interactionPlugin from '@fullcalendar/interaction';
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    allDaySlot: false,
+  var calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
     firstDay: 1,
-    events: "/doneItems",
-
-    eventDrop: function(info) {
-      editEventDate(info);
-    },
-    dateClick: function(info) {
-      addEvent(calendar, info);
-    },
+    selectable: true,
   });
 
   calendar.render();
 });
 
-$.ajaxSetup({
-  headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
-
-function addItems(calendar, info) {
-  var title = "jewelry";
-
-  $.ajax ({
-    url: '/ajax/addItems',
-    type: 'POST',
-    dataType: 'json',
-    data: {
-      "title": title,
-      "date": info.dateStr
-    }
-  }) .done(function(result) {
-    calendar.addItems({
-      id:result['done_id'],
-      title:title,
-      start: info.dateSter,
-    });
-  });
-}
-
-function editDate(info){
-  var done_id = info.event.id;
-  var date = formatDate(info.event.start);
-
-  $.ajax({
-      url: '/ajax/editDate',
-      type: 'POST',
-      data:{
-          "id":done_id,
-          "newDate":date
-          //ドロップしたあとの日付をphp側に渡す
-      }
+$('#expire-btn').on('click', function() {
+  $('#dialog').dialog ({
+    title: '使用期限を追加する',
+    width: 600,
+    height: 600,
+    modal: true,
+    show: {effect: 'clip', duration: 350},
+    hide: {effect: 'clip', duration: 250}
   })
-}
-
-function formatDate(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-    var day = date.getDate();
-    var newDate = year + '-' + month + '-' + day;
-    return newDate;
-}
+});

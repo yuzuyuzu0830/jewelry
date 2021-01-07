@@ -19,8 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/doneItems', 'DoneItemsController@postItem');
-Route::post('/ajax/doneItems', 'DoneItemsController@addItems');
-Route::post('/ajax/editDate', 'DoneItemsController@editDate');
+Route::get('/home', function() {
+    return view('home');
+});
