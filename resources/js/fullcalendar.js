@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
     firstDay: 1,
+    headerToolbar: {
+      right: 'prevYear,prev,next,nextYear'
+    },
     selectable: true,
     event: "{{ route('expiredate') }}"
   });

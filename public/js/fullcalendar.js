@@ -28163,6 +28163,9 @@ document.addEventListener('DOMContentLoaded', function () {
     plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_3__["default"], _fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_4__["default"]],
     initialView: 'dayGridMonth',
     firstDay: 1,
+    headerToolbar: {
+      right: 'prevYear,prev,next,nextYear'
+    },
     selectable: true,
     event: "{{ route('expiredate') }}"
   });
