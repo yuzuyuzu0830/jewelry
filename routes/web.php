@@ -27,5 +27,10 @@ Route::get('/home', function() {
 });
 
 // 消費期限のカレンダー登録
-Route::get('/expire', 'ExpirationController@index')->name('Expiredate');
+Route::get('/expire', 'ExpirationController@index')->name('expire_date');
 Route::post('/store', 'ExpirationController@store')->name('ExpirationStore');
+
+// 所持しているコスメの一覧
+Route::get('/stock', 'PostStockController@index');
+Route::post('/post', 'PostStockController@store');
+Route::get('/show', 'PostStockController@show');
