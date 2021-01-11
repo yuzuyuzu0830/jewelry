@@ -10,7 +10,7 @@
                 <ul>
                     <li>{{ $stock_cosmetic->product }}</li>
                     <li>{{ $stock_cosmetic->brand }}</li>
-                    <li><a href="{{ route('detail_stock', ['id' => $stock_cosmetic->id]) }}">続きをみる</a></li>
+                    <li><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">続きをみる</a></li>
                 </ul>
             </p>
         </div>

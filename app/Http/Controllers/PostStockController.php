@@ -73,7 +73,7 @@ class PostStockController extends Controller
     {
         //
         $stock_cosmetic = StockCosmetic::find($id);
-        return view('stock_cosmetics.detail_stock', compact('stock_cosmetic'));
+        return view('stock_cosmetics.show_stock', compact('stock_cosmetic'));
 
     }
 
@@ -86,6 +86,8 @@ class PostStockController extends Controller
     public function edit($id)
     {
         //
+        $stock_cosmetic = StockCosmetic::find($id);
+        return view('stock_cosmetics.edit_stock', compact('stock_cosmetic'));
     }
 
     /**
@@ -98,6 +100,29 @@ class PostStockController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $stock_cosmetic = StockCosmetic::find($id);
+
+        $stock_cosmetic->product = $request->input('product');
+        $stock_cosmetic->color = $request->input('color');
+        $stock_cosmetic->brand = $request->input('brand');
+        $stock_cosmetic->price = $request->input('price');
+        $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
+        $stock_cosmetic->category = $request->input('category');
+
+        $form = $request->all();
+        if (isset($form['image'])) {
+            $file = $request->file('image');
+            //  getClientOrientalExtension()でファイルの拡張子を取得する
+            $extension = $file->getClientOriginalExtension();
+            $file_token = Str::random(32);
+            $filename = $file_token . '.' . $extension;
+            // 表示を行うときに画像名が必要になるため、ファイル名を再設定
+            $form['image'] = $filename;
+            $request->image->storeAs('uploadImage', $filename);
+        }
+        $stock_cosmetic->fill($form)->save();
+
+        return view('stock_cosmetics.list_of_stock');
     }
 
     /**
@@ -109,5 +134,9 @@ class PostStockController extends Controller
     public function destroy($id)
     {
         //
+        $stock_cosmetic = StockCosmetic::find($id);
+        $stock_cosmetic->delete();
+
+        return redirect('stock_cosmetics/list_of_stock');
     }
 }

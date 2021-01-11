@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 二段階カテゴリーの選択
     var allSubBoxes = document.getElementsByClassName("sub-category");
     for(var i = 0; i<allSubBoxes.length; i++) {
         allSubBoxes[i].style.display = 'none';
@@ -19,6 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 上記で取得した要素を表示する
                 targetSub.style.display = 'inline';
             }
+        }
+    }
+
+    // キャンセルボタン
+    function deletePost(e) {
+        'use strict';
+        if(confirm('本当に削除していいですか？')) {
+            document.getElementById('delete_' + e.dataset.id).submit();
         }
     }
 

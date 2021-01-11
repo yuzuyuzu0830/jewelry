@@ -67134,6 +67134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(module, exports) {
 
 document.addEventListener('DOMContentLoaded', function () {
+  // 二段階カテゴリーの選択
   var allSubBoxes = document.getElementsByClassName("sub-category");
 
   for (var i = 0; i < allSubBoxes.length; i++) {
@@ -67160,6 +67161,15 @@ document.addEventListener('DOMContentLoaded', function () {
         targetSub.style.display = 'inline';
       }
     };
+  } // キャンセルボタン
+
+
+  function deletePost(e) {
+    'use strict';
+
+    if (confirm('本当に削除していいですか？')) {
+      document.getElementById('delete_' + e.dataset.id).submit();
+    }
   }
 });
 
