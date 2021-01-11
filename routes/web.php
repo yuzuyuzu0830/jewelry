@@ -31,6 +31,9 @@ Route::get('/expire', 'ExpirationController@index')->name('expire_date');
 Route::post('/store', 'ExpirationController@store')->name('ExpirationStore');
 
 // 所持しているコスメの一覧
-Route::get('/stock', 'PostStockController@index');
-Route::post('/post', 'PostStockController@store');
-Route::get('/show', 'PostStockController@show');
+Route::prefix('stock_cosmetics')->group(function () {
+    Route::get('/list_of_stock', 'PostStockController@index')->name('list_of_stock');
+    Route::get('/post_stock', 'PostStockController@create')->name('post_stock');
+    Route::post('/post_stock', 'PostStockController@store')->name('post_stock');
+    Route::get('/detail_stock/{id}', 'PostStockController@show')->name('detail_stock');
+});

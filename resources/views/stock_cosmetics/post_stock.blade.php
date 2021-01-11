@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>講習した商品をを登録する</h1>
-<form id="expire-form" method="post" action="/poststock" enctype="multipart/form-data">
+<form id="expire-form" method="post" action="{{ route('post_stock') }}" enctype="multipart/form-data">
     @csrf
     <div class="stock-group">
         <input type="file" class="stock-form" name="image">
@@ -21,7 +21,7 @@
         <label>購入価格<input type="text" class="stock-form" name="price" placeholder="1,200">円</label>
     </div>
     <div class="stock-group">
-        <label>購入日<input type="date" class="stock-form" name="date"></label>
+        <label>購入日<input type="date" class="stock-form" name="purchaseDate"></label>
     </div>
     <div class="stock-group pulldown">
         <label>商品カテゴリー<select class="main-category">

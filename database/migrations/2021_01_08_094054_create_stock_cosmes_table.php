@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStockCosmesTable extends Migration
+class CreateStockCosmeticsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateStockCosmesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stock_cosmes', function (Blueprint $table) {
+        Schema::create('stock_cosmetics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('product', 100);
             $table->string('color', 100)->nullable();

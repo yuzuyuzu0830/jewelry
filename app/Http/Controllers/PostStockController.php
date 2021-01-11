@@ -16,9 +16,8 @@ class PostStockController extends Controller
      */
     public function index()
     {
-        $stock_cosmetics = DB::table('stock_cosmetics')->select('image', 'product', 'brand')->get();
+        $stock_cosmetics = DB::table('stock_cosmetics')->select('image', 'id', 'product', 'brand')->get();
         return view('stock_cosmetics.list_of_stock', compact('stock_cosmetics'));
-
     }
 
     /**
@@ -28,7 +27,7 @@ class PostStockController extends Controller
      */
     public function create()
     {
-        //
+        return view('stock_cosmetics.post_stock');
     }
 
     /**
@@ -73,7 +72,7 @@ class PostStockController extends Controller
     public function show($id)
     {
         //
-
+        $stock_cosmetic = StockCosmetic::find($id);
         return view('stock_cosmetics.detail_stock', compact('stock_cosmetic'));
 
     }
