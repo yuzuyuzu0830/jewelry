@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- main-content -->
 <div class="list">
     @foreach($stock_cosmetics as $stock_cosmetic)
     <div class="card" style="width: 15rem;">
@@ -17,6 +18,18 @@
     </div>
     @endforeach
     <a href="{{ route('post_stock') }}">アイテムを追加する</a>
+
+    <!-- ページネーション -->
     {{ $stock_cosmetics->links() }}
 </div>
+
+<!-- right-side -->
+<!-- 検索バー -->
+<nav class="navbar navbar-light bg-light">
+  <form method="GET" action="{{ route('list_of_stock') }}" class="form-inline">
+      <!-- データを持ってくるにはname属性が必須 -->
+    <input class="form-control mr-sm-2" name="search" type="search" placeholder="" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+  </form>
+</nav>
 @endsection

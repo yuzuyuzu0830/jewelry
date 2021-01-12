@@ -15,11 +15,30 @@ class StockCosmeticController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    // formの値を取得するため、引数にRequest $requestを指定
+    public function index(Request $request)
     {
-        $stock_cosmetics = DB::table('stock_cosmetics')->select('image', 'id', 'product', 'brand')->paginate(24);
+        $search = $request->input('search');
+
+        $query = DB::table('stock_cosmetics');
+        if($search !== null) {
+            // 全角スペースを半角にする
+            $search_split = mb_convert_kana($search, 's');
+            // 空白で区切る(-1は文字数の制限なし、PREG_SPLIT_NO_EMPTYは空文字のみ返されるの意)
+            $search_split2 = preg_split('/[\s,]+/', $search_split,-1,PREG_SPLIT_NO_EMPTY);
+
+            foreach($search_split2 as $value)
+            {
+                $query->where('product', 'like', '%'.$value.'%');
+            }
+        }
+
+        $query->select('image', 'id', 'product', 'brand');
+        $stock_cosmetics = $query->paginate(24);
 
         return view('stock_cosmetics.list_of_stock', compact('stock_cosmetics'));
+
     }
 
     /**
