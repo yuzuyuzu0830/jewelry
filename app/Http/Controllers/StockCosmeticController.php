@@ -17,7 +17,8 @@ class StockCosmeticController extends Controller
      */
     public function index()
     {
-        $stock_cosmetics = DB::table('stock_cosmetics')->select('image', 'id', 'product', 'brand')->get();
+        $stock_cosmetics = DB::table('stock_cosmetics')->select('image', 'id', 'product', 'brand')->paginate(24);
+
         return view('stock_cosmetics.list_of_stock', compact('stock_cosmetics'));
     }
 
