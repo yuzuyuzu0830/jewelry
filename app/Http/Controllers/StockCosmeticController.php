@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\StockCosmetic;
 use Illuminate\Http\Request;
+use App\Http\Requests\Stock;
 
 class StockCosmeticController extends Controller
 {
@@ -36,7 +37,7 @@ class StockCosmeticController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Stock $request)
     {
         $stock_cosmetic = new StockCosmetic();
 

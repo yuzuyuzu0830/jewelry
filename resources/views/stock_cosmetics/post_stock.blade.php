@@ -2,6 +2,19 @@
 
 @section('content')
 <h1>講習した商品をを登録する</h1>
+
+<!-- エラー -->
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+<!-- 入力フォーム -->
 <form id="expire-form" method="post" action="{{ route('post_stock') }}" enctype="multipart/form-data">
     @csrf
     <div class="stock-group">
