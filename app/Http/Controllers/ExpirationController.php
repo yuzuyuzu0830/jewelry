@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\ExpirationCosme;
+use App\Models\ExpirationCosmetic;
 
 
 class ExpirationController extends Controller
@@ -17,8 +17,8 @@ class ExpirationController extends Controller
     public function index()
     {
         //
-        $expiredate = ExpirationCosme::Latest()->get();
-        return response()->json($expiredate);
+        $data = ExpirationCosmetic::Latest()->get();
+        return response()->json($data);
     }
 
     /**
@@ -49,8 +49,9 @@ class ExpirationController extends Controller
         if ($validator->failed()) {
             return redirect()->back();
         } else {
-            ExpirationCosme::create()($request->all());
+            ExpirationCosmetic::create($request->all());
         }
+        return redirect()->back();
     }
 
     /**

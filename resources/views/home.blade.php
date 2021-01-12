@@ -32,7 +32,7 @@
                                     </button>
                                 </div>
                                 <div id="dialog" class="modal-body">
-                                    <form id="expire-form" method="post">
+                                    <form id="expire-form" method="post" action="{{ route('ExpirationStore') }}">
                                         @csrf
                                         <div class="expire-group">
                                             <div class="expire-group">
@@ -44,11 +44,9 @@
                                         <div class="expire-group">
                                             <label>文字の色<input type="color" class="expire-form" name="textColor"></label>
                                         </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                        <button type="submit" id="expire-btn" class="btn btn-primary">登録</button>
                                     </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-                                    <button type="button" id="expire-btn" class="btn btn-primary">登録</button>
                                 </div>
                             </div>
                         </div>

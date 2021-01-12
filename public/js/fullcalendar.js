@@ -28167,7 +28167,7 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'prevYear,prev,next,nextYear'
     },
     selectable: true,
-    event: "{{ route('expiredate') }}"
+    event: "{{ route('expire_date') }}"
   });
   calendar.render();
 });
