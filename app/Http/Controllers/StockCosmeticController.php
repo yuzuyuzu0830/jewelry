@@ -30,7 +30,9 @@ class StockCosmeticController extends Controller
 
             foreach($search_split2 as $value)
             {
-                $query->where('product', 'like', '%'.$value.'%');
+                $query
+                    ->where('product', 'like', '%'.$value.'%')
+                    ->orWhere('brand', 'like', '%'.$value.'%');
             }
         }
 

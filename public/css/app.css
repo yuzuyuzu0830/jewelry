@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.stock-cosmetics {
+  display: flex;
+}
+
 @font-face {
   font-family: "Yu Gothic";
   src: local("Yu Gothic Medium");
