@@ -17,5 +17,6 @@
     </div>
     @endforeach
     <a href="{{ route('post_stock') }}">アイテムを追加する</a>
+    {{ $stock_cosmetics->links() }}
 </div>
 @endsection
