@@ -119,7 +119,7 @@ class StockCosmeticController extends Controller
             $filename = $file_token . '.' . $extension;
             // 表示を行うときに画像名が必要になるため、ファイル名を再設定
             $form['image'] = $filename;
-            $request->image->storeAs('uploadImage', $filename);
+            $file->move('upload/stock_cosmetics', $filename);
         }
         $stock_cosmetic->fill($form)->save();
 
