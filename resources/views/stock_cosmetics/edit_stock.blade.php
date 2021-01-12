@@ -4,6 +4,7 @@
 <form id="expire-form" method="POST" action="{{ route('update_stock', ['id' => $stock_cosmetic->id]) }}" enctype="multipart/form-data">
     @csrf
     <div class="stock-group">
+        <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="Non-Image">
         <input type="file" class="stock-form" name="image">
     </div>
     <div class="stock-group">

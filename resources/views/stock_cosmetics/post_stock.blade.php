@@ -24,7 +24,7 @@
         <label>購入日<input type="date" class="stock-form" name="purchaseDate"></label>
     </div>
     <div class="stock-group pulldown">
-        <label>商品カテゴリー<select class="main-category">
+        <label>商品カテゴリー<select class="main-category" name="main_category">
             <option value="">カテゴリーを選択</option>
             <option value="base-makeup">ベースメイク</option>
             <option value="eyes-makeup">アイメイク</option>

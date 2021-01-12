@@ -32,11 +32,11 @@ Route::post('/store', 'ExpirationController@store')->name('ExpirationStore');
 
 // 所持しているコスメの一覧
 Route::prefix('stock_cosmetics')->group(function () {
-    Route::get('/list_of_stock', 'PostStockController@index')->name('list_of_stock');
-    Route::get('/post_stock', 'PostStockController@create')->name('post_stock');
-    Route::post('/post_stock', 'PostStockController@store')->name('post_stock');
-    Route::get('/show_stock/{id}', 'PostStockController@show')->name('show_stock');
-    Route::get('/edit_stock/{id}', 'PostStockController@edit')->name('edit_stock');
-    Route::post('/update_stock/{id}', 'PostStockController@update')->name('update_stock');
-    Route::post('/destroy_stock/{id}', 'PostStockController@destroy')->name('destroy_stock');
+    Route::get('/list_of_stock', 'StockCosmeticController@index')->name('list_of_stock');
+    Route::get('/post_stock', 'StockCosmeticController@create')->name('post_stock');
+    Route::post('/post_stock', 'StockCosmeticController@store')->name('post_stock');
+    Route::get('/show_stock/{id}', 'StockCosmeticController@show')->name('show_stock');
+    Route::get('/edit_stock/{id}', 'StockCosmeticController@edit')->name('edit_stock');
+    Route::post('/update_stock/{id}', 'StockCosmeticController@update')->name('update_stock');
+    Route::post('/destroy_stock/{id}', 'StockCosmeticController@destroy')->name('destroy_stock');
 });

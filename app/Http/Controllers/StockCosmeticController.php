@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Models\StockCosmetic;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Models\StockCosmetic;
+use Illuminate\Http\Request;
 
-class PostStockController extends Controller
+class StockCosmeticController extends Controller
 {
+    //
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +45,9 @@ class PostStockController extends Controller
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
+        $stock_cosmetic->main_category = $request->input('main_category');
         $stock_cosmetic->category = $request->input('category');
+
 
         $form = $request->all();
         if (isset($form['image'])) {
@@ -56,11 +58,11 @@ class PostStockController extends Controller
             $filename = $file_token . '.' . $extension;
             // 表示を行うときに画像名が必要になるため、ファイル名を再設定
             $form['image'] = $filename;
-            $request->image->storeAs('uploadImage', $filename);
+            $file->move('upload/stock_cosmetics', $filename);
         }
         $stock_cosmetic->fill($form)->save();
 
-        return view('stock_cosmetics.list_of_stock');
+        return redirect('stock_cosmetics/list_of_stock');
     }
 
     /**
@@ -107,7 +109,6 @@ class PostStockController extends Controller
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
-        $stock_cosmetic->category = $request->input('category');
 
         $form = $request->all();
         if (isset($form['image'])) {
@@ -122,7 +123,7 @@ class PostStockController extends Controller
         }
         $stock_cosmetic->fill($form)->save();
 
-        return view('stock_cosmetics.list_of_stock');
+        return redirect('stock_cosmetics/list_of_stock');
     }
 
     /**
