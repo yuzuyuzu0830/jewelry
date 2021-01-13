@@ -32,7 +32,7 @@
                                     </button>
                                 </div>
                                 <div id="dialog" class="modal-body">
-                                    <form id="expire-form" method="post" action="{{ route('ExpirationStore') }}">
+                                    <form id="expire-form" method="post" action="{{ route('expirationStore') }}">
                                         @csrf
                                         <div class="expire-group">
                                             <div class="expire-group">

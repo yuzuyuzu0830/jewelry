@@ -1,7 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-.stock-cosmetics {
-  display: flex;
+article {
+  margin: 0;
+  background-color: #ecebea;
+}
+
+article h1 {
+  margin-bottom: 15px;
+}
+
+aside {
+  background-color: #b8acc8;
 }
 
 @font-face {
@@ -10962,7 +10971,13 @@ body {
   text-align: justify;
 }
 
-.test-color {
-  color: red;
+.navbar-light .navbar-nav .nav-link {
+  color: #ecebea;
+}
+
+.navbar {
+  height: 110px;
+  background-color: #7c7c7c;
+  width: 100%;
 }
 

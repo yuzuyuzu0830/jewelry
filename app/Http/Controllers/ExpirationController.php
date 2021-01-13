@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\ExpirationCosmetic;
-
+use Illuminate\Support\Facades\DB;
 
 class ExpirationController extends Controller
 {
@@ -17,8 +17,16 @@ class ExpirationController extends Controller
     public function index()
     {
         //
-        $data = ExpirationCosmetic::Latest()->get();
-        return response()->json($data);
+        $stock_data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get()->toArray();;
+        dd($stock_data);
+        return view('/home', compact('stock_data'));
+
+        //$data = ExpirationCosmetic::Latest()->get();
+        //$calendar = response()->json($data);
+
+
+
+        //return view('/home', compact('calendar'));
     }
 
     /**

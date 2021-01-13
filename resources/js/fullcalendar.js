@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'prevYear,prev,next,nextYear'
     },
     selectable: true,
-    event: "{{ route('expire_date') }}"
+    events: "{{ route('expire_date') }}"
   });
 
   calendar.render();

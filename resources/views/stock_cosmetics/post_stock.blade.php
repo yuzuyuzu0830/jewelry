@@ -49,64 +49,39 @@
         </select></label>
         <!-- ベースメイクの詳細 -->
         <select id="base-makeup" class="sub-category" name="category">
-            <option value="化粧下地">化粧下地</option>
-            <option value="コンシーラー">コンシーラー</option>
-            <option value="ファンデーション">ファンデーション</option>
-            <option value="bb・ccクリーム">bb・ccクリーム</option>
-            <option value="フェイスパウダー">フェイスパウダー</option>
-            <option value="ハイライト">ハイライト</option>
-            <option value="シェーディング">シェーディング</option>
-            <option value="チーク">チーク</option>
+            @foreach(config('stock-category.base-makeup') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <!-- アイメイク -->
         <select id="eyes-makeup" class="sub-category" name="category">
-            <option value="アイシャドウ">アイシャドウ</option>
-            <option value="アイライナー">アイライナー</option>
-            <option value="マスカラ">マスカラ</option>
-            <option value="アイブロウ">アイブロウ</option>
+            @foreach(config('stock-category.eyes-makeup') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <!-- リップメイク -->
         <select id="lip-makeup" class="sub-category" name="category">
-            <option value="口紅">口紅</option>
-            <option value="リップグロス">リップグロス</option>
-            <option value="リップライナー">リップライナー</option>
-            <option value="リップクリーム">リップクリーム</option>
+            @foreach(config('stock-category.lip-makeup') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <!-- ネイルケア -->
         <select id="nail-care" class="sub-category" name="category">
-            <option value="マニキュア">マニキュア</option>
-            <option value="トップコート">トップコーと</option>
-            <option value="ネイルケア">ネイルケア</option>
-            <option value="除光液">除光液</option>
+            @foreach(config('stock-category.nail-care') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <!-- スキンケア -->
         <select id="skin-care" class="sub-category" name="category">
-            <option value="化粧水">化粧水</option>
-            <option value="乳液">乳液</option>
-            <option value="クリーム">クリーム</option>
-            <option value="オイル">オイル</option>
-            <option value="ブースター">ブースター</option>
-            <option value="アイクリーム">アイクリーム</option>
-            <option value="洗顔">洗顔</option>
-            <option value="クレンジング">クレンジング</option>
-            <option value="オールインワン">オールインワン</option>
-            <option value="スペシャルケア">スペシャルケア</option>
-        </select>
-        <!-- スキンケア -->
-        <select id="skin-care" class="sub-category" name="category">
-            <option value="日焼け止め">日焼け止め</option>
-            <option value="アウトバスケア">アウトバスケア</option>
-            <option value="インバスケア">インバスケア</option>
-            <option value="オーラルケア">オーラルケア</option>
-            <option value="デオドラント">デオドラント</option>
-            <option value="パーツボディケア">パーツボディケア</option>
+            @foreach(config('stock-category.skin-care') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <!-- ヘアケア -->
         <select id="hair-care" class="sub-category" name="category">
-            <option value="シャンプー">シャンプー</option>
-            <option value="トリートメント">トリートメント</option>
-            <option value="スペシャルケア">スペシャルケア</option>
-            <option value="ヘアスタイリング">ヘアスタイリング</option>
+            @foreach(config('stock-category.hair-care') as $key => $stock)
+                <option value="{{ $key }}">{{ $stock['label'] }}</option>
+            @endforeach
         </select>
         <br>
         <input type="submit" value="登録">

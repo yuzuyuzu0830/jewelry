@@ -1,3 +1,14 @@
-.stock-cosmetics {
-  display: flex;
+
+// article
+article {
+  margin: 0;
+  background-color: rgba(236, 235, 234);
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+// aside
+aside {
+  background-color: rgba(184, 172, 200);
 }

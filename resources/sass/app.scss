@@ -70,6 +70,16 @@ body {
   letter-spacing: 0.1em;
   text-align: justify;
 }
-.test-color {
-  color: red;
+.navbar-light {
+  .navbar-nav {
+    .nav-link {
+      color: rgba(236, 235, 234);
+    }
+  }
+}
+
+.navbar {
+  height: 110px;
+  background-color: rgba(124, 124, 124);
+  width: 100%;
 }
