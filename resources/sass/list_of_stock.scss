@@ -2,13 +2,45 @@
 // article
 article {
   margin: 0;
-  background-color: rgba(236, 235, 234);
+  background-color: $white;
   h1 {
     margin-bottom: 15px;
+  }
+  a {
+    padding: 10px;
+    color: $white;
+    display: inline-block;
+  }
+}
+.add-item {
+  background-color: $dark-purple;
+}
+.list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 25px;
+}
+.card {
+  width: 300px;
+  height: 370px;
+  border: 3px solid $dark-purple;
+  border-radius: 50px;
+  img {
+    height: 275px;
+  }
+}
+.cart-text {
+  ul {
+    text-decoration: none;
+    li:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0,0,0,.2);
+    }
   }
 }
 
 // aside
 aside {
-  background-color: rgba(184, 172, 200);
+  background-color: $purple;
 }

@@ -8,6 +8,7 @@ require('./bootstrap');
 
 import './fullcalendar';
 import './post_stock';
+import './stock_modal';
 
 window.Vue = require('vue');
 

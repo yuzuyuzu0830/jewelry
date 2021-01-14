@@ -66938,12 +66938,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fullcalendar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fullcalendar */ "./resources/js/fullcalendar.js");
 /* harmony import */ var _post_stock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_stock */ "./resources/js/post_stock.js");
 /* harmony import */ var _post_stock__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_post_stock__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _stock_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stock_modal */ "./resources/js/stock_modal.js");
+/* harmony import */ var _stock_modal__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_stock_modal__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -67163,6 +67166,17 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/stock_modal.js":
+/*!*************************************!*\
+  !*** ./resources/js/stock_modal.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+MicroModal.init();
 
 /***/ }),
 

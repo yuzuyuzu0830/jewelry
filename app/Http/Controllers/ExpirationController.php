@@ -17,8 +17,7 @@ class ExpirationController extends Controller
     public function index()
     {
         //
-        $stock_data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get()->toArray();;
-        dd($stock_data);
+        $stock_data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get()->toArray();
         return view('/home', compact('stock_data'));
 
         //$data = ExpirationCosmetic::Latest()->get();

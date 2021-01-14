@@ -5,13 +5,20 @@
 @import 'variables';
 
 @import 'list_of_stock';
+@import 'stock_modal';
 
 // Line-height
 $headings-line-height: 1.5;
 $line-height-base: 1.65;
 
 // Colors
-$gray-dark: rgba(124, 124, 124);
+$purple:  rgba(184, 172, 200);
+$dark-purple: rgba(126, 109, 157);
+$grey: rgba(124, 124, 124);
+$white: rgba(236, 235, 234);
+$blue: rgba(179, 211, 219);
+$dark-blue: rgba(105, 138, 151);
+
 // Font-family
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
 
@@ -73,13 +80,13 @@ body {
 .navbar-light {
   .navbar-nav {
     .nav-link {
-      color: rgba(236, 235, 234);
+      color: $white;
     }
   }
 }
 
 .navbar {
   height: 110px;
-  background-color: rgba(124, 124, 124);
+  background-color: $grey;
   width: 100%;
 }
