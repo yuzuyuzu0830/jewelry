@@ -14,18 +14,18 @@ class ExpirationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $stock_data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get()->toArray();
-        return view('/home', compact('stock_data'));
+        if ($request->ajax()) {
+            // TODO: DBからカレンダーのデータを取得するように修正する
+            $data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get();
 
-        //$data = ExpirationCosmetic::Latest()->get();
-        //$calendar = response()->json($data);
+            return response()->json($data);
 
+        }
 
-
-        //return view('/home', compact('calendar'));
+        return view('home');
     }
 
     /**

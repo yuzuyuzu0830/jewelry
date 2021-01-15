@@ -1,49 +1,71 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+#calendar {
+  background-color: #fff;
+}
+
 article {
   margin: 0;
   background-color: #ecebea;
 }
 
 article h1 {
-  margin-bottom: 15px;
-}
-
-article a {
-  padding: 10px;
   color: #ecebea;
-  display: inline-block;
-}
-
-.add-item {
-  background-color: #7e6d9d;
+  font-family: Courgette;
 }
 
 .list {
   display: grid;
-  gap: 16px;
+  gap: 15px;
   grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 25px;
 }
 
-.card {
-  width: 300px;
-  height: 370px;
-  border: 3px solid #7e6d9d;
-  border-radius: 50px;
+.stock-items {
+  width: 250px;
+  height: 350px;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px #ccc;
+  background-color: #fff;
+  border-radius: 20px;
 }
 
-.card img {
-  height: 275px;
+.stock-items img {
+  height: 260px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 5px 5px 10px #ccc;
 }
 
-.cart-text ul {
+.stock-items ul {
   text-decoration: none;
 }
 
-.cart-text ul li:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+.add-item {
+  text-align: right;
+}
+
+.add-item .add-button {
+  border-radius: 10px;
+  width: 175px;
+  margin-right: 50px;
+  border: 3px solid #7e6d9d;
+}
+
+.add-item .add-button:hover {
+  background-color: #7e6d9d;
+}
+
+.add-item .add-button a {
+  color: #7e6d9d;
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.add-item .add-button:hover {
+  color: white;
+  text-decoration: none;
 }
 
 aside {
@@ -258,6 +280,12 @@ aside {
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
+}
+
+.logo img {
+  width: 3000px;
+  height: 150 px;
+  color: #b3d3db;
 }
 
 @font-face {
@@ -11224,7 +11252,7 @@ body {
 
 .navbar {
   height: 110px;
-  background-color: #7c7c7c;
+  background-color: #698a97;
   width: 100%;
 }
 

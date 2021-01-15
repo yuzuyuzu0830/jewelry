@@ -40,6 +40,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function logout() {
+        $this->middleware('guest')->except('logout');
+        return redirect('/');
+    }
+
     private const GUEST_USER_EMAIL = 'guest@guest.com';
 
     public function guestLogin()

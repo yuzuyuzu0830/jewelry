@@ -3,6 +3,7 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 import 'jquery-ui/ui/widgets/datepicker.js';
 
+
 // fullcalendar
 import { Calendar } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -19,8 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'prevYear,prev,next,nextYear'
     },
     selectable: true,
-    events: "{{ route('expire_date') }}"
+    eventLimit: true,
+    events: '/calendar'
   });
-
-  calendar.render();
 });

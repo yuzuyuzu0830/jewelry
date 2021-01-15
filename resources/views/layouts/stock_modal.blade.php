@@ -9,25 +9,21 @@
                   <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
                 </header>
                 <main class="modal__content" id="modal-1-content">
-                <ul>
-    <li><img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="Non-Image"></li>
-    <li>{{ $stock_cosmetic->product }}</li>
-</ul>
-{{ $stock_cosmetic->color }}
-{{ $stock_cosmetic->brand }}
-{{ $stock_cosmetic->price }}
-{{ $stock_cosmetic-> purchaseDate }}
-{{ $stock_cosmetic->category }}
-
-<form method="GET" action="{{ route('edit_stock', ['id' => $stock_cosmetic->id]) }}">
-    @csrf
-    <input type="submit" value="編集する">
-</form>
-<form method="POST" action="{{ route('destroy_stock', ['id' => $stock_cosmetic->id]) }}" id="delete_{{ $stock_cosmetic->id }}">
-    @csrf
-    <a href="#" class="btn btn-danger" data-id="{{ $stock_cosmetic->id }}" onclick="deletePost(this);">削除する</a>
-
-</form>
+                <form id="expire-form" method="post" action="{{ route('expirationStore') }}">
+                                        @csrf
+                                        <div class="expire-group">
+                                            <div class="expire-group">
+                                            <label>商品名<input type="text" class="expire-form" name="title" placeholder="例 製品名/ブランド名"></label>
+                                        </div>
+                                        <div class="expire-group">
+                                            <label>使用期限<input type="date" class="expire-form" name="start"></label>
+                                        </div>
+                                        <div class="expire-group">
+                                            <label>文字の色<input type="color" class="expire-form" name="textColor"></label>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                                        <button type="submit" id="expire-btn" class="btn btn-primary">登録</button>
+                                    </form>
                 </main>
                 <footer class="modal__footer">
                   <button class="modal__btn modal__btn-primary">Continue</button>
@@ -38,4 +34,4 @@
         </div>
 
         <!-- 開くボタン -->
-        <button data-micromodal-trigger="modal-1">open</button>
+        <button data-micromodal-trigger="modal-1" action="">open</button>

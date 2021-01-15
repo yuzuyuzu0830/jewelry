@@ -4,41 +4,57 @@ article {
   margin: 0;
   background-color: $white;
   h1 {
-    margin-bottom: 15px;
-  }
-  a {
-    padding: 10px;
     color: $white;
-    display: inline-block;
+    font-family: Courgette;
+
   }
-}
-.add-item {
-  background-color: $dark-purple;
 }
 .list {
   display: grid;
-  gap: 16px;
+  gap: 15px;
   grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 25px;
 }
-.card {
-  width: 300px;
-  height: 370px;
-  border: 3px solid $dark-purple;
-  border-radius: 50px;
+.stock-items {
+  width: 250px;
+  height: 350px;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px #ccc;
+  background-color: #fff;;
+  border-radius: 20px;
   img {
-    height: 275px;
+    height: 260px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 5px 5px 10px #ccc;
   }
-}
-.cart-text {
   ul {
     text-decoration: none;
-    li:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 30px rgba(0,0,0,.2);
+  }
+}
+.add-item {
+  text-align: right;
+  .add-button {
+    border-radius: 10px;
+    width: 175px;
+    margin-right: 50px;
+    border: 3px solid $dark-purple;
+    &:hover {
+      background-color: $dark-purple;
+    }
+    a {
+      color: $dark-purple;
+      display: inline-block;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+    &:hover {
+      color: white;
+      text-decoration: none;
     }
   }
 }
+
 
 // aside
 aside {
