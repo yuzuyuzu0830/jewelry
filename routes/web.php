@@ -18,17 +18,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // ゲストユーザーログイン
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
-Route::get('/home', function() {
-    return view('home');
-});
-
 // 消費期限のカレンダー登録
-Route::get('/expire', 'ExpirationController@index')->name('expire_date');
-Route::post('/store', 'ExpirationController@store')->name('ExpirationStore');
+Route::get('/home', 'ExpirationController@index');
+Route::post('/store', 'ExpirationController@store')->name('expirationStore');
 
 // 所持しているコスメの一覧
 Route::prefix('stock_cosmetics')->group(function () {

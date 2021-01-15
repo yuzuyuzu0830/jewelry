@@ -29,7 +29,7 @@ class Stock extends FormRequest
             'product' => 'required|string|max:100',
             'color' => 'nullable|string|max:50',
             'brand' => 'nullable|string|max:100',
-            'price' => 'nullable|numeric|max:7',
+            'price' => 'nullable|integer|max:10',
             'purchaseDate' => 'nullable',
             'main_category' => 'required',
             'category' => 'required'

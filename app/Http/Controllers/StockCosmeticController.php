@@ -30,7 +30,9 @@ class StockCosmeticController extends Controller
 
             foreach($search_split2 as $value)
             {
-                $query->where('product', 'like', '%'.$value.'%');
+                $query
+                    ->where('product', 'like', '%'.$value.'%')
+                    ->orWhere('brand', 'like', '%'.$value.'%');
             }
         }
 
@@ -96,7 +98,7 @@ class StockCosmeticController extends Controller
     {
         //
         $stock_cosmetic = StockCosmetic::find($id);
-        return view('stock_cosmetics.show_stock', compact('stock_cosmetic'));
+        return view('layouts.stock_modal', compact('stock_cosmetic'));
 
     }
 

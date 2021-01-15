@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ExpirationCosme extends Model
+class ExpirationCosmetic extends Model
 {
     //
     protected $fillable = ['id', 'title', 'start', 'textColor'];

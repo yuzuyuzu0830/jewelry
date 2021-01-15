@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\ExpirationCosme;
-
+use App\Models\ExpirationCosmetic;
+use Illuminate\Support\Facades\DB;
 
 class ExpirationController extends Controller
 {
@@ -14,11 +14,18 @@ class ExpirationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $expiredate = ExpirationCosme::Latest()->get();
-        return response()->json($expiredate);
+        if ($request->ajax()) {
+            // TODO: DBからカレンダーのデータを取得するように修正する
+            $data = DB::table('expiration_cosmetics')->select('title', 'start', 'textColor')->get();
+
+            return response()->json($data);
+
+        }
+
+        return view('home');
     }
 
     /**
@@ -49,8 +56,9 @@ class ExpirationController extends Controller
         if ($validator->failed()) {
             return redirect()->back();
         } else {
-            ExpirationCosme::create()($request->all());
+            ExpirationCosmetic::create($request->all());
         }
+        return redirect()->back();
     }
 
     /**
