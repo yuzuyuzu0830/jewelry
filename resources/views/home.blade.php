@@ -20,12 +20,13 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <script>
-        $(document).ready(function () {
+         $(document).ready(function () {
             $('#calendar').fullCalendar({
                 firstDay: 1,
                 headerToolbar: {
@@ -34,7 +35,10 @@
                 editable: true,
                 eventLimit: true,
                 selectable: true,
-                events: '/home'
+                events: '/home',
+                backgroundColor: 'black',
+                contentHeight: 550,
+                aspectRatio: 2,
             });
         });
         </script>
@@ -42,24 +46,36 @@
     <body>
         <div class="main row">
             <article class="col-9">
-                <div class="container mt-4 mb-4 pr-4 pl-5">
-                    <div id="calendar"></div>
-                    <button data-micromodal-trigger="modal-1">化粧品を登録する</button>
+                <div class="container pr-6 pl-6">
+                    <h1 class=" mt-5 mb-5 ml-3">My beauty Calendar</h1>
+                    <article class="calendar mb-5">
+                        <div id="calendar"></div>
+                    </article>
+                    <div class="post-button mb-5">
+                        <a data-micromodal-trigger="modal-1">I've Done…</a>
+                    </div>
                     @include('layouts.modal')
                 </div>
             </article>
             <aside class="col-3">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">ホーム（カレンダー）</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ほしい物リスト</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('list_of_stock') }}">購入品リスト<a>
-                    </li>
-            @include('layouts.sidebar')
+                <h2 class="logo mt-5 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
+                <nav class="menu">
+                    <div class="nav-title">
+                        <p>メニュー</p>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">ホーム（カレンダー）</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ほしい物リスト</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('list_of_stock') }}">購入品リスト<a>
+                        </li>
+                    </ul>
+                </nav>
+            @include('sidebar.logout')
             </aside>
         </div>
         <script>

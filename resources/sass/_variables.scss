@@ -4,7 +4,9 @@ $body-bg: #f8fafc;
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
-$line-height-base: 1.6;
+
+// font awesome
+$fa-font-path:        "../webfonts";
 
 // Colors
 $blue: #3490dc;
@@ -20,7 +22,7 @@ $cyan: #6cb2eb;
 // Colors
 $purple:  rgba(184, 172, 200);
 $dark-purple: rgba(126, 109, 157);
-$grey: rgba(124, 124, 124);
+$letter: rgba(124, 124, 124);
 $white: rgba(236, 235, 234);
 $blue: rgba(179, 211, 219);
-$dark-blue: rgba(105, 138, 151);
+$grey: rgba(105, 138, 151);

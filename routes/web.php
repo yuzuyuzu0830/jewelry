@@ -24,8 +24,8 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 // 消費期限のカレンダー登録
-Route::get('/home', 'ExpirationController@index');
-Route::post('/store', 'ExpirationController@store')->name('expirationStore');
+Route::get('/home', 'DoneTaskController@index');
+Route::post('/store', 'DoneTaskController@store')->name('done_task');
 
 // 所持しているコスメの一覧
 Route::prefix('stock_cosmetics')->group(function () {

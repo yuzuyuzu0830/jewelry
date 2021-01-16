@@ -84,42 +84,17 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./resources/js/fullcalendar.js":
-/*!**************************************!*\
-  !*** ./resources/js/fullcalendar.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-document.addEventListener('DOMContentLoaded', function () {
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new Calendar(calendarEl, {
-    plugins: [dayGridPlugin, interactionPlugin],
-    initialView: 'dayGridMonth',
-    firstDay: 1,
-    headerToolbar: {
-      right: 'prevYear,prev,next,nextYear'
-    },
-    selectable: true,
-    eventLimit: true,
-    events: '/calendar'
-  });
-});
-
-/***/ }),
-
-/***/ 1:
+/******/ ([
+/* 0 */,
+/* 1 */
 /*!********************************************!*\
   !*** multi ./resources/js/fullcalendar.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kikuchiyukou/Desktop/jewelry/resources/js/fullcalendar.js */"./resources/js/fullcalendar.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/Users/kikuchiyukou/Desktop/jewelry/resources/js/fullcalendar.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
-
-/******/ });
+/******/ ]);

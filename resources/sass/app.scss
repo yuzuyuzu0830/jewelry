@@ -4,22 +4,21 @@
 // Variables
 @import 'variables';
 
+// font awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
 @import 'home';
 @import 'list_of_stock';
 @import 'stock_modal';
 @import 'sidebar';
+@import 'post_stock';
 
 // Line-height
 $headings-line-height: 1.5;
 $line-height-base: 1.65;
-
-// Colors
-$purple:  rgba(184, 172, 200);
-$dark-purple: rgba(126, 109, 157);
-$letter: rgba(124, 124, 124);
-$white: rgba(236, 235, 234);
-$blue: rgba(179, 211, 219);
-$grey: rgba(105, 138, 151);
 
 // Font-family
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
@@ -75,10 +74,58 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Y
 // Bootstrapのscssを読み込む
 @import '~bootstrap/scss/bootstrap';
 
+// 共通
 body {
   letter-spacing: 0.1em;
   text-align: justify;
+  color: $letter;
 }
+article {
+  margin: 0;
+  background-color: $white;
+}
+aside {
+  background-color: $purple;
+  margin: 0 auto;
+}
+
+// h1
+h1 {
+  font-size: 45px;
+  color: $letter;
+  font-family: 'Bad Script';
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+// 追加ボタン
+.post-button {
+  border: 2px solid $dark-purple;
+  border-radius: 20px;
+  margin: 0 0 0 auto;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+  cursor: pointer;
+  &:hover {
+    background: $dark-purple;
+    transition: .4s;
+  }
+  a {
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: $dark-purple;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+
+//　nav
 .navbar-light {
   .navbar-nav {
     .nav-link {
@@ -86,9 +133,26 @@ body {
     }
   }
 }
-
-.navbar {
-  height: 110px;
-  background-color: $grey;
-  width: 100%;
+.nav-title {
+  p {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+    font-size: 15px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 35px;
+      height: 1px;
+      background-color: $letter;
+    }
+  }
+}
+.nav-title,p:before {
+  left:0;
+}
+.nav-title,p:after {
+  right: 0;
 }

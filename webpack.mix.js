@@ -14,5 +14,6 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
 
-//fullcalendar
-mix.js('resources/js/fullcalendar.js', 'public/js');
+   if (mix.inProduction()) {
+      mix.version();
+    }
