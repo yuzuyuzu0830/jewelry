@@ -40,7 +40,18 @@ class StockCosmeticController extends Controller
         $stock_cosmetics = $query->paginate(24);
 
         return view('stock_cosmetics.list_of_stock', compact('stock_cosmetics'));
+    }
 
+    public function calendar(Request $request) {
+        if ($request->ajax()) {
+            // TODO: DBからカレンダーのデータを取得するように修正する
+            $data = DB::table('stock_cosmetics')->select('title', 'purchaseDate')->get();
+
+            return response()->json($data);
+
+        }
+
+        return view('home');
     }
 
     /**
@@ -98,7 +109,7 @@ class StockCosmeticController extends Controller
     {
         //
         $stock_cosmetic = StockCosmetic::find($id);
-        return view('layouts.stock_modal', compact('stock_cosmetic'));
+        return view('stock_cosmetics.show_stock', compact('stock_cosmetic'));
 
     }
 

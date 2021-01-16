@@ -9,7 +9,7 @@
                   <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
                 </header>
                 <main class="modal__content" id="modal-1-content">
-                <form id="expire-form" method="post" action="{{ route('expirationStore') }}">
+                <form id="expire-form" method="post" action="{{ route('post_stock') }}">
                                         @csrf
                                         <div class="expire-group">
                                             <div class="expire-group">

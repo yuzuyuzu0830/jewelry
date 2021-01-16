@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.head')
 
-@section('content')
+@section('main')
 <ul>
     <li><img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="Non-Image"></li>
     <li>{{ $stock_cosmetic->product }}</li>
