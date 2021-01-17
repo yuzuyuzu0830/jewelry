@@ -1,8 +1,95 @@
 
 
+// 左の画像
 .post-img {
   img {
     height: 700px;
     width: 400px;
+  }
+}
+
+// フォーム
+.group input {
+  border: none;
+  border-bottom: 2px solid $letter;
+  margin-bottom: 18px;
+}
+.group label {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: block;
+}
+input[type="text"], input[type="email"], input[type="date"] {
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 1rem;
+  width: 360px;
+}
+// ファイル
+.upload-button {
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+  border-radius:3px;
+  background: rgba(255,255,255,.5);
+  text-align:center;
+  padding:10px;
+  margin-bottom: 18px;
+  line-height:30px;
+  width:180px;
+  cursor:pointer;
+  &:hover {
+    opacity: .5;
+  }
+}
+.upload-button input[type=file] {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  opacity:0;
+}
+.upload-value {
+  display:none;
+  background:rgba(255,255,255,.5);
+  border-radius:5px;
+  padding:3px;
+  color:#ffffff;
+}
+// 各パーツ
+.price::placeholder {
+  text-align: right;
+}
+.group select {
+  padding: 6px;
+  border: none;
+  background:rgba(255,255,255,.5);
+  border-radius:5px;
+  label {
+    margin-bottom: 5px;
+  }
+}
+.form-btn {
+  text-align: right;
+  margin-top: 14px;
+  margin-right: 5px;
+  input {
+    background-color: $blue;
+    border: none;
+    padding: 10px 6px;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  input:hover {
+    opacity: .5;
+  }
+  a {
+    color: #212529;
   }
 }

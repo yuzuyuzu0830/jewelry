@@ -52,14 +52,14 @@
                         <div id="calendar"></div>
                     </article>
                     <div class="post-button mb-5">
-                        <a data-micromodal-trigger="modal-1">I've Done…</a>
+                        <a data-micromodal-trigger="modal-1" class="calendar-modal">I've Done…</a>
                     </div>
                     @include('layouts.modal')
                 </div>
             </article>
             <aside class="col-3">
                 <h2 class="logo mt-5 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
-                <nav class="menu">
+                <nav class="menu mb-5">
                     <div class="nav-title">
                         <p>メニュー</p>
                     </div>
