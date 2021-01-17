@@ -6182,12 +6182,14 @@ article {
   box-shadow: 5px 0 10px #ccc;
 }
 
-.stock-items ul {
+.stock-items a {
+  color: #7c7c7c;
   text-decoration: none;
 }
 
-.stock-items ul li {
-  text-decoration: none;
+.marker {
+  background: linear-gradient(transparent 65%, #b3d3db 65%);
+  font-weight: bold;
 }
 
 .modal {
@@ -6409,6 +6411,112 @@ article {
 .post-img img {
   height: 700px;
   width: 400px;
+}
+
+.group input {
+  border: none;
+  border-bottom: 2px solid #7c7c7c;
+  margin-bottom: 18px;
+}
+
+.group label {
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input[type=text],
+input[type=email],
+input[type=date] {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 1rem;
+  width: 360px;
+}
+
+.upload-button {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 18px;
+  line-height: 30px;
+  width: 180px;
+  cursor: pointer;
+}
+
+.upload-button:hover {
+  opacity: 0.5;
+}
+
+.upload-button input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.upload-value {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 3px;
+  color: #ffffff;
+}
+
+.price::-moz-placeholder {
+  text-align: right;
+}
+
+.price:-ms-input-placeholder {
+  text-align: right;
+}
+
+.price::placeholder {
+  text-align: right;
+}
+
+.group select {
+  padding: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.group select label {
+  margin-bottom: 5px;
+}
+
+.form-btn {
+  text-align: right;
+  margin-top: 14px;
+  margin-right: 5px;
+}
+
+.form-btn input {
+  background-color: #b3d3db;
+  border: none;
+  padding: 10px 6px;
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.form-btn input:hover {
+  opacity: 0.5;
+}
+
+.form-btn a {
+  color: #212529;
 }
 
 @font-face {
@@ -17367,7 +17475,15 @@ a.text-dark:focus {
 body {
   letter-spacing: 0.1em;
   text-align: justify;
-  color: #7c7c7c;
+  color: #212529;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 article {
@@ -17416,10 +17532,6 @@ h1 {
   color: #ecebea;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #ecebea;
-}
-
 .nav-title p {
   position: relative;
   display: inline-block;
@@ -17446,5 +17558,17 @@ p:before {
 .nav-title,
 p:after {
   right: 0;
+}
+
+.nav-link {
+  color: #212529;
+}
+
+.logout {
+  background: #b8acc8;
+}
+
+.logout a:hover {
+  opacity: 0.5;
 }
 

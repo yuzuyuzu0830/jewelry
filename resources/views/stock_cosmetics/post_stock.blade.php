@@ -7,10 +7,10 @@
         <div class="container pr-4 pl-5">
             <h1 class="mt-5 mb-5">I bought…</h1>
             <div class="post-content row justify-content-between">
-                <div class="post-img col-6">
+                <div class="post-img col-6 mb-5">
                     <img src="{{ asset('img/post-stock.jpg') }}" alt="cosmetics">
                 </div>
-                <section class="co-6">
+                <section class="stock-form col-6">
                     <!-- エラー -->
                     @if ($errors->any())
                     <div class="alert alert-danger">
@@ -23,29 +23,32 @@
                     @endif
 
                     <!-- 入力フォーム -->
-                    <form id="expire-form" method="post" action="{{ route('post_stock') }}" enctype="multipart/form-data">
+                    <form id="expire-form" class="mt-5" method="post" action="{{ route('post_stock') }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="stock-group">
-                            <input type="file" class="stock-form" name="image">
+                        <div class="upload-button">ファイルを選択する
+                            <input type="file" name="image" onchange="uv.style.display='inline-block'; uv.value = this.value;">
+                            <input type="text" id="uv" class="upload-value" disabled>
                         </div>
-                        <div class="stock-group">
-                            <label>商品名<input type="text" class="stock-form" name="product"></label>
+                        <div class="group">
+                            <label for="name">商品名</label>
+                            <input id="name" type="text" name="product">
                         </div>
-                        <div class="stock-group">
-                            <label>カラー<input type="text" class="stock-form" name="text"></label>
+                        <div class="group">
+                            <label for="color">カラー</label>
+                            <input id="color" type="text" name="text">
                         </div>
-                        <div class="stock-group">
-                            <label>ブランド<input type="text" class="stock-form" name="brand"></label>
+                        <div class="group">
+                            <label for="brand">ブランド</label><input id="brand" type="text" name="brand">
                         </div>
-                        <div class="stock-group">
+                        <div class="group">
                             <!-- text-align: rightを指定する -->
-                            <label>購入価格<input type="text" class="stock-form" name="price" placeholder="1,200">円</label>
+                            <label for="price">購入価格</label><input id="price" class="price mr-2" type="text" name="price" placeholder="1,200">円
                         </div>
-                        <div class="stock-group">
-                            <label>購入日<input type="date" class="stock-form" name="purchaseDate"></label>
+                        <div class="group">
+                            <label for="purchase-date">購入日</label><input id="purchase-date" type="date" name="purchaseDate">
                         </div>
-                        <div class="stock-group pulldown">
-                            <label>商品カテゴリー<select class="main-category" name="main_category">
+                        <div class="group pulldown">
+                            <label for="main-category">商品カテゴリー</label><select id="main-category" class="main-category mb-2" name="main_category">
                                 <option value="">カテゴリーを選択</option>
                                 <option value="base-makeup">ベースメイク</option>
                                 <option value="eyes-makeup">アイメイク</option>
@@ -54,7 +57,7 @@
                                 <option value="skin-care">スキンケア</option>
                                 <option value="hair-care">ヘアケア</option>
                                 <option value="other">その他</option>
-                            </select></label>
+                            </select>
                             <!-- ベースメイクの詳細 -->
                             <select id="base-makeup" class="sub-category" name="category">
                                 @foreach(config('stock-category.base-makeup') as $key => $stock)
@@ -92,7 +95,10 @@
                                 @endforeach
                             </select>
                             <br>
-                            <input type="submit" value="登録">
+                            <div class="form-btn">
+                                <input class="mr-3" type="submit" value="登録">
+                                <span class="marker"><a href="{{ route('list_of_stock') }}">キャンセル</a></span>
+                            </div>
                         </div>
                     </form>
                 </section>

@@ -9,12 +9,15 @@
             <div class="list">
                 @foreach($stock_cosmetics as $stock_cosmetic)
                 <div class="stock-items mb-5">
-                    <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}"
-                            <ul>
-                                <li>{{ $stock_cosmetic->product }}</li>
-                                <li>{{ $stock_cosmetic->brand }}</li>
-                                <li><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">続きをみる</a></li>
-                            </ul>
+                    @if($stock_cosmetic->image === null)
+                    <img src="{{ asset('img/no-image.jpg') }}">
+                    @else
+                    <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}">
+                    @endif
+                    <div class="pt-3 pb-2 pr-3 pl-3">
+                        <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>
+                        <span class="marker"><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">詳細/編集</a></span>
+                    </div>
                 </div>
                 @endforeach
             </div>
@@ -51,7 +54,7 @@
                         <a class="nav-link" href="#">ほしい物リスト</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">購入品リスト<a>
+                        <a class="nav-link disabled" href="#">購入品リスト</a>
                     </li>
                 </ul>
             </nav>

@@ -78,7 +78,13 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Y
 body {
   letter-spacing: 0.1em;
   text-align: justify;
-  color: $letter;
+  color: #212529;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 article {
   margin: 0;
@@ -126,33 +132,18 @@ h1 {
 
 
 //　nav
-.navbar-light {
-  .navbar-nav {
-    .nav-link {
-      color: $white;
-    }
+.nav-link {
+  color: #212529;
+  &:hover {
+    color: #212529;
+    opacity: .5;
   }
 }
-.nav-title {
-  p {
-    position: relative;
-    display: inline-block;
-    padding: 0 55px;
-    font-size: 15px;
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      display: inline-block;
-      width: 35px;
-      height: 1px;
-      background-color: $letter;
-    }
-  }
+
+//　ログアウト
+.dropdown-item {
+  background: $purple;
 }
-.nav-title,p:before {
-  left:0;
-}
-.nav-title,p:after {
-  right: 0;
+.logout a:hover {
+  opacity: .5;
 }
