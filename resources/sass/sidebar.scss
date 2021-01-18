@@ -1,6 +1,51 @@
+// ロゴ
 .logo {
+  margin-top: 130px;
   img {
     width: 200px;
-    height:100 px;
+    height:100px;
+  }
+}
+//　nav
+.nav-link {
+  color: #212529;
+  &:hover {
+    color: #212529;
+    opacity: .5;
+  }
+}
+// メニューの表記
+.nav-title {
+  p {
+    position: relative;
+    display: inline-block;
+    padding: 0 55px;
+    font-size: 15px;
+    &:before, &:after {
+      width: 35px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      content: '';
+      background-color: $letter;
+    }
+  }
+}
+.nav-title,p:before {
+  left:0;
+}
+.nav-title,p:after {
+  right: 0;
+}
+
+
+//　ログアウト
+.dropdown-item {
+  background: $purple;
+}
+.logout {
+  &:hover {
+    opacity: .5;
   }
 }

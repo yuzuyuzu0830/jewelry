@@ -48,9 +48,9 @@
             <article class="col-9">
                 <div class="container pr-6 pl-6">
                     <h1 class=" mt-5 mb-5 ml-3">My beauty Calendar</h1>
-                    <article class="calendar mb-5">
+                    <section class="calendar mb-5">
                         <div id="calendar"></div>
-                    </article>
+                    </section>
                     <div class="post-button mb-5">
                         <a data-micromodal-trigger="modal-1" class="calendar-modal">I've Done…</a>
                     </div>
@@ -58,7 +58,7 @@
                 </div>
             </article>
             <aside class="col-3">
-                <h2 class="logo mt-5 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
+                <h2 class="logo mt-10 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
                 <nav class="menu mb-5">
                     <div class="nav-title">
                         <p>メニュー</p>

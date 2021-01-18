@@ -15,6 +15,7 @@
 @import 'stock_modal';
 @import 'sidebar';
 @import 'post_stock';
+@import 'show_stock';
 
 // Line-height
 $headings-line-height: 1.5;
@@ -68,14 +69,12 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Y
   }
 }
 
-// modal-padding
-
-
 // Bootstrapのscssを読み込む
 @import '~bootstrap/scss/bootstrap';
 
 // 共通
 body {
+  min-height:100vh;
   letter-spacing: 0.1em;
   text-align: justify;
   color: #212529;
@@ -87,32 +86,34 @@ a {
   text-decoration: none;
 }
 article {
+  min-height:100vh;
   margin: 0;
   background-color: $white;
 }
 aside {
+  min-height:100vh;
+  text-align: center;
   background-color: $purple;
-  margin: 0 auto;
 }
 
 // h1
 h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 45px;
   color: $letter;
   font-family: 'Bad Script';
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 
 // 追加ボタン
 .post-button {
-  border: 2px solid $dark-purple;
-  border-radius: 20px;
-  margin: 0 0 0 auto;
   width: 175px;
+  margin: 0 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid $dark-purple;
+  border-radius: 20px;
   transition: .4s;
   cursor: pointer;
   &:hover {
@@ -120,8 +121,8 @@ h1 {
     transition: .4s;
   }
   a {
-    display: block;
     padding: 10px 10px;
+    display: block;
     text-decoration: none;
     color: $dark-purple;
     &:hover {
@@ -130,20 +131,19 @@ h1 {
   }
 }
 
-
-//　nav
-.nav-link {
-  color: #212529;
+// 決定、キャンセルボタン
+.submit-btn {
+  width: 80px;
+  padding: 10px 6px;
+  border: none;
+  background-color: $blue;
+  line-height: 1;
+  border-radius: 5px;
+  cursor: pointer;
   &:hover {
-    color: #212529;
     opacity: .5;
   }
 }
-
-//　ログアウト
-.dropdown-item {
-  background: $purple;
-}
-.logout a:hover {
-  opacity: .5;
+.cancel-btn {
+  color: #212529;
 }
