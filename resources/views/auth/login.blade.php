@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('ログイン') }}</div>
-
+            <div class="white-back mt-5">
                 <div class="card-body">
+                    <h2>ログイン</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -52,15 +51,15 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-4 auth-btn">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ログイン') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <span class=marker><a href="{{ route('password.request') }}">
                                         {{ __('パスワードを忘れた場合はこちら') }}
-                                    </a>
+                                    </a></span>
                                 @endif
                             </div>
                         </div>

@@ -10,6 +10,8 @@
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
+@import 'top';
+@import 'auth';
 @import 'home';
 @import 'list_of_stock';
 @import 'stock_modal';
@@ -77,7 +79,7 @@ body {
   min-height:100vh;
   letter-spacing: 0.1em;
   text-align: justify;
-  color: #212529;
+  color: $black;
 }
 ul {
   list-style: none;
@@ -130,6 +132,12 @@ h1 {
     }
   }
 }
+// 透明のbackground
+.white-back {
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  margin: 0 auto;
+}
 
 // 決定、キャンセルボタン
 .submit-btn {
@@ -145,5 +153,5 @@ h1 {
   }
 }
 .cancel-btn {
-  color: #212529;
+  color: $black;
 }
