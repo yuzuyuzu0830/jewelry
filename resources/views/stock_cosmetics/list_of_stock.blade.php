@@ -10,9 +10,9 @@
                 @foreach($stock_cosmetics as $stock_cosmetic)
                 <div class="stock-items mb-5">
                     @if($stock_cosmetic->image === null)
-                    <img src="{{ asset('img/no-image.jpg') }}">
+                    <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
                     @else
-                    <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}">
+                    <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="cosmetic-image">
                     @endif
                     <div class="pt-3 pb-2 pr-3 pl-3">
                         <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>
@@ -30,8 +30,8 @@
     </article>
 
     <aside class="col-3">
-        <div class="container mt-5">
-            <h2 class="logo mt-5 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
+        <div class="container mt-10">
+            <h2 class="logo mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
             <section>
                 <form class="stock-search mb-5" method="GET" action="{{ route('list_of_stock') }}">
                 <!-- データを持ってくるにはname属性が必須 -->
@@ -62,4 +62,7 @@
         </div>
     </aside>
 </div>
+<script>
+            MicroModal.init();
+        </script>
 @endsection

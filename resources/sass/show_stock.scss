@@ -1,0 +1,36 @@
+.show-display {
+  margin: 0 auto;
+}
+.show-content {
+  width: 850px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 30px;
+}
+.show-detail {
+  padding-right: 30px;
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.show-img {
+  img {
+    width:310px;
+    height: 350px;
+    border-radius: 10px;
+  }
+}
+.show-list {
+  margin-top: 80px;
+  li {
+    margin-bottom: 15px;
+    width: 400px;
+    border-bottom: 2px solid $blue;
+  }
+}
+.show-btn {
+  display: flex;
+  .submit-btn {
+    margin-right: 10px;
+  }
+}

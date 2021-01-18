@@ -96,8 +96,8 @@
                             </select>
                             <br>
                             <div class="form-btn">
-                                <input class="mr-3" type="submit" value="登録">
-                                <span class="marker"><a href="{{ route('list_of_stock') }}">キャンセル</a></span>
+                                <input class="submit-btn mr-3" type="submit" value="登録">
+                                <span class="marker"><a  class="cancel-btn" href="{{ route('list_of_stock') }}">キャンセル</a></span>
                             </div>
                         </div>
                     </form>
@@ -106,8 +106,8 @@
         </div>
     </article>
     <aside class="col-3">
-        <div class="container mt-5">
-            <h2 class="logo mt-5 mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
+        <div class="container mt-10">
+            <h2 class="logo mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
         </div>
         @include('sidebar.menu')
         @include('sidebar.logout')
