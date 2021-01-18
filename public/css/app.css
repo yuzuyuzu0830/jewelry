@@ -6194,7 +6194,7 @@ readers do not read off random characters that represent icons */
 }
 
 .header-left img {
-  width: 190px;
+  width: 150px;
   height: 70px;
   margin-top: 10px;
 }
@@ -6215,6 +6215,10 @@ readers do not read off random characters that represent icons */
   color: white;
 }
 
+.white-back.login-form {
+  margin-top: 100px;
+}
+
 .card-body h2 {
   margin-left: 10px;
   font-size: 18px;
@@ -6222,6 +6226,14 @@ readers do not read off random characters that represent icons */
 
 .form-control {
   background-color: none;
+  border-bottom: 2px solid #b3d3db;
+}
+
+#email.form-control,
+#password.form-control {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
   border-bottom: 2px solid #b3d3db;
 }
 
@@ -6240,12 +6252,14 @@ readers do not read off random characters that represent icons */
   cursor: pointer;
 }
 
-.form-group .row a {
-  color: #212529;
+.form-check {
+  margin-bottom: 15px;
 }
 
-.auth-btn {
-  margin: 0 0 0 auto;
+.auth-btn a {
+  margin-left: 15px;
+  color: #212529;
+  font-weight: 400;
 }
 
 #calendar {
@@ -17656,6 +17670,11 @@ ul {
 }
 
 a {
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
   text-decoration: none;
 }
 
