@@ -7,7 +7,7 @@
         <div class="container pr-6 pl-5">
             <h1 class="mt-5 mb-5">My Cosmetic</h1>
             <div class="show-display">
-                <div class="show-content ml-5">
+                <div class="white-back">
                     <div class="show-detail">
                         <div class="show-img mt-4">
                             @if($stock_cosmetic->image === null)

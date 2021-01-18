@@ -16,18 +16,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1>jewelry</h1>
-        <div class="flex-center position-ref full-height">
+    <div class="header">
+        <nav>
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="header-top">
                     @auth
                         <a href="{{ url('/home') }}">マイページ</a>
                     @else
                         <a href="{{ route('login') }}">ログイン</a>
-                        <a href="{{ route('login.guest') }}" class="text-white">
+                        <a href="{{ route('login.guest') }}">
                             ゲストログイン
                         </a>
                         @if (Route::has('register'))
@@ -36,6 +36,8 @@
                     @endauth
                 </div>
             @endif
-        </div>
+        </nav>
+        <h1>jewelry</h1>
+    </div>
 </body>
 </html>

@@ -1,0 +1,33 @@
+.header {
+  height: 700px;
+  background-image: url("../../public/img/hero-image.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  position: relative;
+  nav {
+    margin: 0 0 0 auto;
+  }
+  h1 {
+    position: absolute;
+    bottom: 50px;
+    left: 240px;
+    font-family: 'Bad Script';
+    font-size: 90px;
+    color: $letter;
+    letter-spacing: 10px;
+  }
+}
+.header-top {
+  padding-top: 34px;
+  text-align: right;
+}
+.header-top a {
+  margin-right: 35px;
+  color: $letter;
+  font-size: 20px;
+  &:hover {
+    opacity: .5;
+    text-decoration: none;
+  }
+}

@@ -23,33 +23,28 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'jewelry') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+<article>
+    <div class="auth-header">
+            <div class="header-left">
+                <img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry">
+            </div>
+            <div class="header-right">
+                <nav>
+                    <ul class="header-nav">
                         @guest
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
+                                <li>
+                                    <a href="{{ route('register') }}">{{ __('新規登録') }}</a>
                                 </li>
                             @endif
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login.guest') }}">{{ __('ゲストログイン') }}</a>
+                            <li>
+                                <a href="{{ route('login.guest') }}">{{ __('ゲストログイン') }}</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                            <li>
+                                <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
                             </li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -68,10 +63,10 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+                </nav>
             </div>
-        </nav>
-
+        </div>
     @yield('content')
+</article>
 </body>
 </html>
