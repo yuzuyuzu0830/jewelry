@@ -1,3 +1,10 @@
+
+@mixin formSet {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid $blue;
+}
 // header
 .auth-header {
     height: 90px;
@@ -37,16 +44,19 @@
     font-size: 18px;
   }
 }
-.form-control {
-  background-color: none;
-  border-bottom: 2px solid $blue;
+#name.form-control {
+  @include formSet;
 }
-#email.form-control, #password.form-control {
-  margin-bottom: 15px;
-  background: #fff;
-  border: none;
-  border-bottom: 2px solid $blue;
+#email.form-control {
+  @include formSet;
 }
+#password.form-control {
+  @include formSet;
+}
+#password-confirm.form-control {
+  @include formSet;
+}
+
 .form-group .row {
   margin-bottom: 20px;
   .btn .btn-primary {

@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('新規登録') }}</div>
-
+            <div class="white-back login-form">
                 <div class="card-body">
+                    <h2>新規登録</h2>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
