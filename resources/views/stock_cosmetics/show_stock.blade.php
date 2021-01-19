@@ -4,26 +4,35 @@
 
 <div class="main row">
     <article class="col-9">
-        <div class="container pr-6 pl-5">
+        <div class="container pr-5 pl-5">
             <h1 class="mt-5 mb-5">My Cosmetic</h1>
-            <div class="show-display">
                 <div class="white-back">
                     <div class="show-detail">
-                        <div class="show-img mt-4">
+                        <div class="show-img-form">
                             @if($stock_cosmetic->image === null)
-                                <img src="{{ asset('img/no-image.jpg') }}">
+                                <img class="show-img" src="{{ asset('img/no-image.jpg') }}">
                             @else
-                                <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="cosmetic-image"></article>
+                                <img class="show-img" src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="cosmetic-image"></article>
                             @endif
                         </div>
-                        <section class="show-list>
-                            <ul>
-                                <li>{{ $stock_cosmetic->product }}</li>
-                                <li>{{ $stock_cosmetic->color }}</li>
-                                <li>{{ $stock_cosmetic->brand }}</li>
-                                <li>{{ $stock_cosmetic->price . '円' }}</li>
-                                <li>{{ $stock_cosmetic-> purchaseDate }}</li>
-                            </ul>
+                        <div class="show-content">
+                            <table>
+                                <tr>
+                                    <th>商品名</th><td>{{ $stock_cosmetic->product }}</td>
+                                </tr>
+                                <tr>
+                                    <th>カラー</th><td><{{ $stock_cosmetic->color }}/td>
+                                </tr>
+                                <tr>
+                                    <th>ブランド</th><td>{{ $stock_cosmetic->brand }}</td>
+                                </tr>
+                                <tr>
+                                    <th>価格</th><td>{{ $stock_cosmetic->price . '円' }}</td>
+                                </tr>
+                                <tr>
+                                    <th>購入日</th><td>{{ $stock_cosmetic-> purchaseDate }}</td>
+                                </tr>
+                            </table>
                             <div class="show-btn">
                                 <form method="GET" action="{{ route('edit_stock', ['id' => $stock_cosmetic->id]) }}">
                                     @csrf
@@ -34,10 +43,9 @@
                                     <span class="marker"><a href="#" class="cancel-btn" data-id="{{ $stock_cosmetic->id }}" onclick="deletePost(this);">削除する</a></span>
                                 </form>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </article>
     <aside class="col-3">

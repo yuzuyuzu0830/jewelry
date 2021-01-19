@@ -11,27 +11,30 @@
                     @csrf
                     <div class="tasks-group">
                         <p>できたことをチェック</p>
-                        <input id="brush" type="checkbox" name="title" value="ブラシ洗浄"><label class="label" for="brush">ブラシ洗浄</label>
+                        <input id="brush" type="radio" name="title" value="ブラシ洗浄"><label for="brush">ブラシ洗浄</label>
 
-                        <label><input type="checkbox" name="title" value="パフ洗浄">パフ洗浄</label>
+                        <input id="puff" type="radio" name="title" value="パフ洗浄"><label for="puff">パフ洗浄</label>
 
-                        <label><input type="checkbox" name="title" value="顔のパック">顔のパック</label>
+                        <input id="pack" type="radio" name="title" value="顔のパック"><label for="pack">顔のパック</label><br>
 
-                        <label><input type="checkbox" name="title" value="トリートメント">トリートメント</label>
+                        <input id="treatment" type="radio" name="title" value="トリートメント"><label for="treatment">トリートメント</label>
 
-                        <label><input type="checkbox" name="title" value="ピーリング">ピーリング</label>
+                        <input id="peeling" type="radio" name="title" value="ピーリング"><label for="peeling">ピーリング</label><br>
 
-                        <label>その他<input type="text" name="title"></label>
+                        <div class="radio-other">
+                            <input id="other" type="radio"> <label for="other">その他</label>
+                            <input id="other" type="text" name="title">
+                        </div>
                     </div>
                     <div class="tasks-group">
-                        <label>登録する日付<input type="date" class="task-form" name="start"></label>
+                        <label>登録する日付</label><input type="date" class="task-form" name="start">
                     </div>
                     <div class="tasks-group">
                         <label>文字の色<input type="color" class="task-form" name="textColor"></label>
                     </div>
                     <div class="modal-btn">
-                        <button class="modal__btn modal__btn-primary"　type="submit">登録</button>
-                        <div class="marker"><a id="expire-btn"　class="modal__btn" data-micromodal-close aria-label="Close this dialog window">キャンセル</a></div>
+                        <button class="modal__btn modal__btn-primary mr-3"　type="submit">登録</button>
+                        <span class="marker"><a id="expire-btn"　class="modal__btn" data-micromodal-close aria-label="Close this dialog window">キャンセル</a></span>
                     </div>
                 </form>
             </main>

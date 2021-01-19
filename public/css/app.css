@@ -6301,71 +6301,43 @@ readers do not read off random characters that represent icons */
   color: #ecebea;
 }
 
-.tasks-group input[type=checkbox] {
-  display: none;
-}
-
-.tasks-group input[type=checkbox] label {
-  position: relative;
-  padding: 0 0 0 42px;
-}
-
-.tasks-group input[type=checkbox] label::after {
-  position: absolute;
-  /* ボックスの位置を指定する */
-  content: "";
-  /* ボックスのコンテンツ */
-  display: block;
-  /* ブロックレベル要素化する */
-  top: 50%;
-  /* 上部から配置の基準位置を決める */
-  left: 15px;
-  /* 左から配置の基準位置を決める */
-  margin-top: -10px;
-  /* チェック枠の位置 */
-  width: 15px;
-  /* ボックスの横幅を指定する */
-  height: 15px;
-  /* ボックスの高さを指定する */
-  border: 2px solid #b3d3db;
-  /* ボックスの境界線を実線で指定する */
-  border-radius: 6px;
-}
-
-.tasks-group input[type=text],
-.tasks-group input[type=date] {
+.tasks-group input[type=date],
+.tasks-group input[type=text] {
+  width: 250px;
+  padding: 0;
   margin-bottom: 15px;
-  background: #fff;
-  border: none;
-  border-bottom: 2px solid #b3d3db;
+  border-bottom: 1px solid #212529;
+}
+
+.tasks-group input[type=radio] label {
+  margin-right: 15px;
 }
 
 .task-form {
   margin-bottom: 15px;
 }
 
-.modal__btn .modal__btn-primary {
+.radio-other {
+  display: flex;
+}
+
+button.modal__btn.modal__btn-primary.mr-3 {
   width: 80px;
   padding: 10px 6px;
-  margin: 0 0 0 auto;
-  border: none;
-  background-color: #b3d3db;
   line-height: 1;
+  background-color: #b3d3db;
+  color: #212529;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.modal__btn .modal__btn-primary:hover {
+button.modal__btn.modal__btn-primary.mr-3:hover {
   opacity: 0.5;
 }
 
 .modal-btn {
   display: flex;
-}
-
-.modal__btn {
-  margin: 0 0 0 auto;
-  font-weight: 400;
+  justify-content: flex-end;
 }
 
 article {
@@ -6762,33 +6734,45 @@ input[type=date] {
 }
 
 .show-detail {
-  padding: 30px;
+  padding: 30px 50px;
   display: flex;
   justify-content: space-between;
 }
 
-.show-img img {
+.show-img-form {
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+.show-img {
   width: 310px;
   height: 350px;
   border-radius: 10px;
 }
 
-.show-list {
-  margin-top: 80px;
-}
-
-.show-list li {
-  margin-bottom: 15px;
-  width: 400px;
-  border-bottom: 2px solid #b3d3db;
-}
-
 .show-btn {
   display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .show-btn .submit-btn {
   margin-right: 10px;
+}
+
+table {
+  width: 450px;
+  margin: 60px 15px 45px 0;
+}
+
+table tr {
+  margin-bottom: 15px;
+}
+
+table th,
+td {
+  padding: 20px 5px 5px 5px;
+  border-bottom: 1px solid #698a97;
 }
 
 .edit-form {
@@ -6800,16 +6784,12 @@ input[type=date] {
 .edit-img {
   width: 310px;
   height: 350px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   border-radius: 10px;
 }
 
 .stock-group {
   margin-bottom: 15px;
-}
-
-.price {
-  margin-left: 5px;
 }
 
 @font-face {
