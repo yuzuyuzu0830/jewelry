@@ -6301,6 +6301,73 @@ readers do not read off random characters that represent icons */
   color: #ecebea;
 }
 
+.tasks-group input[type=checkbox] {
+  display: none;
+}
+
+.tasks-group input[type=checkbox] label {
+  position: relative;
+  padding: 0 0 0 42px;
+}
+
+.tasks-group input[type=checkbox] label::after {
+  position: absolute;
+  /* ボックスの位置を指定する */
+  content: "";
+  /* ボックスのコンテンツ */
+  display: block;
+  /* ブロックレベル要素化する */
+  top: 50%;
+  /* 上部から配置の基準位置を決める */
+  left: 15px;
+  /* 左から配置の基準位置を決める */
+  margin-top: -10px;
+  /* チェック枠の位置 */
+  width: 15px;
+  /* ボックスの横幅を指定する */
+  height: 15px;
+  /* ボックスの高さを指定する */
+  border: 2px solid #b3d3db;
+  /* ボックスの境界線を実線で指定する */
+  border-radius: 6px;
+}
+
+.tasks-group input[type=text],
+.tasks-group input[type=date] {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid #b3d3db;
+}
+
+.task-form {
+  margin-bottom: 15px;
+}
+
+.modal__btn .modal__btn-primary {
+  width: 80px;
+  padding: 10px 6px;
+  margin: 0 0 0 auto;
+  border: none;
+  background-color: #b3d3db;
+  line-height: 1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal__btn .modal__btn-primary:hover {
+  opacity: 0.5;
+}
+
+.modal-btn {
+  display: flex;
+}
+
+.modal__btn {
+  margin: 0 0 0 auto;
+  font-weight: 400;
+}
+
 article {
   margin: 0 auto;
 }
@@ -6722,6 +6789,27 @@ input[type=date] {
 
 .show-btn .submit-btn {
   margin-right: 10px;
+}
+
+.edit-form {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-img {
+  width: 310px;
+  height: 350px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.stock-group {
+  margin-bottom: 15px;
+}
+
+.price {
+  margin-left: 5px;
 }
 
 @font-face {
