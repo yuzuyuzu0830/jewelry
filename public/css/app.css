@@ -6636,7 +6636,11 @@ p:after {
   background: #b8acc8;
 }
 
-.logout:hover {
+.logout a {
+  color: #212529;
+}
+
+.logout a a:hover {
   opacity: 0.5;
 }
 
@@ -6753,7 +6757,6 @@ input[type=date] {
 .show-btn {
   display: flex;
   justify-content: flex-end;
-  flex-direction: column;
 }
 
 .show-btn .submit-btn {
