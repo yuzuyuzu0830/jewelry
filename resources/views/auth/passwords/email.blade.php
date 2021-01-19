@@ -4,10 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('パスワードをリセットする') }}</div>
-
+            <div class="white-back login-form">
                 <div class="card-body">
+                    <h2>パスワードをリセットする</h2>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

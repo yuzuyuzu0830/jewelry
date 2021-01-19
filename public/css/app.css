@@ -6224,13 +6224,28 @@ readers do not read off random characters that represent icons */
   font-size: 18px;
 }
 
-.form-control {
-  background-color: none;
+#name.form-control {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
   border-bottom: 2px solid #b3d3db;
 }
 
-#email.form-control,
+#email.form-control {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid #b3d3db;
+}
+
 #password.form-control {
+  margin-bottom: 15px;
+  background: #fff;
+  border: none;
+  border-bottom: 2px solid #b3d3db;
+}
+
+#password-confirm.form-control {
   margin-bottom: 15px;
   background: #fff;
   border: none;
@@ -6257,9 +6272,13 @@ readers do not read off random characters that represent icons */
 }
 
 .auth-btn a {
-  margin-left: 15px;
+  margin-left: 30px;
   color: #212529;
   font-weight: 400;
+}
+
+.auth-btn .marker {
+  margin-left: 30px;
 }
 
 #calendar {
