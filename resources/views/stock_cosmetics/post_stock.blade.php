@@ -97,7 +97,7 @@
                             <br>
                             <div class="form-btn">
                                 <input class="submit-btn mr-3" type="submit" value="登録">
-                                <span class="marker"><a  class="cancel-btn" href="{{ route('list_of_stock') }}">キャンセル</a></span>
+                                <span class="marker"><a class="cancel-btn" href="{{ route('list_of_stock') }}">キャンセル</a></span>
                             </div>
                         </div>
                     </form>
