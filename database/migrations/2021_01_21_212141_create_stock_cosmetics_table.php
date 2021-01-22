@@ -15,13 +15,14 @@ class CreateStockCosmeticsTable extends Migration
     {
         Schema::create('stock_cosmetics', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->mediumText('image')->nullable();
             $table->string('product', 100);
+            $table->unsignedBigInteger('user_id');
             $table->string('color', 100)->nullable();
             $table->string('brand', 100)->nullable();
-            $table->integer('price')->length(6)->nullable();
+            $table->integer('price')->nullable();
             $table->date('purchaseDate')->nullable();
-            $table->string('main_category')
-            $table->string('category');
+            $table->string('main_category');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateStockCosmeticsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock_cosmes');
+        Schema::dropIfExists('stock_cosmetics');
     }
 }

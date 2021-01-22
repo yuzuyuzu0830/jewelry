@@ -4,7 +4,7 @@
   justify-content: space-between;
 }
 .show-img-form {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-right: 20px;
 }
 .show-img {
@@ -19,14 +19,14 @@
     margin-right: 10px;
   }
 }
-table {
+.show-table {
   width: 450px;
   margin: 60px 15px 45px 0;
-}
-table tr {
-  margin-bottom: 15px;
-}
-table th, td {
-  padding: 20px 5px 5px 5px;
-  border-bottom: 1px solid $grey;
+  tr {
+    margin-bottom: 15px;
+  }
+  th, td {
+    padding: 20px 5px 5px 5px;
+    border-bottom: 1px solid $grey;
+  }
 }

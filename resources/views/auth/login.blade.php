@@ -57,9 +57,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <span class=marker><a href="{{ route('password.request') }}">
+                                    <a href="{{ route('password.request') }}">
                                         {{ __('パスワードを忘れた場合はこちら') }}
-                                    </a></span>
+                                    </a>
                                 @endif
                             </div>
                         </div>

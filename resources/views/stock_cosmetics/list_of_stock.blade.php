@@ -33,7 +33,7 @@
         <div class="container mt-10">
             <h2 class="logo mb-5"><img src="{{ asset('img/sidebar-logo.png') }}" alt="jewelry"></h2>
             <section>
-                <form class="stock-search mb-5" method="GET" action="{{ route('list_of_stock') }}">
+                <form class="stock-search mb-5" method="GET" action="{{ route('list_of_stock', ['user_id' => Auth::id()]) }}">
                 <!-- データを持ってくるにはname属性が必須 -->
                     <div class="nav-title">
                         <p class="mb-4">アイテムを検索する</p>

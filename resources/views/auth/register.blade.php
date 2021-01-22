@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード(8s文字以上で20文字以下)') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード(8文字以上で20文字以下)') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

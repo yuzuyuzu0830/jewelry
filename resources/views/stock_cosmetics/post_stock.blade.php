@@ -50,55 +50,18 @@
                         <div class="group pulldown">
                             <label for="main-category">商品カテゴリー</label><select id="main-category" class="main-category mb-2" name="main_category">
                                 <option value="">カテゴリーを選択</option>
-                                <option value="base-makeup">ベースメイク</option>
-                                <option value="eyes-makeup">アイメイク</option>
-                                <option value="lip-makeup">リップメイク</option>
-                                <option value="nail-care">ネイル・ネイルケア</option>
-                                <option value="skin-care">スキンケア</option>
-                                <option value="hair-care">ヘアケア</option>
-                                <option value="other">その他</option>
+                                <option value="1">ベースメイク</option>
+                                <option value="2">アイメイク</option>
+                                <option value="3">リップメイク</option>
+                                <option value="4">ネイル・ネイルケア</option>
+                                <option value="5">スキンケア</option>
+                                <option value="6">ヘアケア</option>
+                                <option value="7">その他</option>
                             </select>
-                            <!-- ベースメイクの詳細 -->
-                            <select id="base-makeup" class="sub-category" name="category">
-                                @foreach(config('stock-category.base-makeup') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <!-- アイメイク -->
-                            <select id="eyes-makeup" class="sub-category" name="category">
-                                @foreach(config('stock-category.eyes-makeup') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <!-- リップメイク -->
-                            <select id="lip-makeup" class="sub-category" name="category">
-                                @foreach(config('stock-category.lip-makeup') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <!-- ネイルケア -->
-                            <select id="nail-care" class="sub-category" name="category">
-                                @foreach(config('stock-category.nail-care') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <!-- スキンケア -->
-                            <select id="skin-care" class="sub-category" name="category">
-                                @foreach(config('stock-category.skin-care') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <!-- ヘアケア -->
-                            <select id="hair-care" class="sub-category" name="category">
-                                @foreach(config('stock-category.hair-care') as $key => $stock)
-                                    <option value="{{ $key }}">{{ $stock['label'] }}</option>
-                                @endforeach
-                            </select>
-                            <br>
-                            <div class="form-btn">
-                                <input class="submit-btn mr-3" type="submit" value="登録">
-                                <span class="marker"><a class="cancel-btn" href="{{ route('list_of_stock') }}">キャンセル</a></span>
-                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <input class="submit-btn mr-3" type="submit" value="登録">
+                            <span class="marker"><a class="cancel-btn" href="{{ route('list_of_stock', ['user_id' => Auth::id()]) }}">キャンセル</a></span>
                         </div>
                     </form>
                 </section>

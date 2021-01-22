@@ -16,7 +16,7 @@
                             @endif
                         </div>
                         <div class="show-content">
-                            <table>
+                            <table class="show-table">
                                 <tr>
                                     <th>商品名</th><td>{{ $stock_cosmetic->product }}</td>
                                 </tr>

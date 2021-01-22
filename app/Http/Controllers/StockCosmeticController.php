@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\StockCosmetic;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\Stock;
+use Illuminate\Support\Facades\Auth;
 
 class StockCosmeticController extends Controller
 {
@@ -17,11 +19,13 @@ class StockCosmeticController extends Controller
      */
 
     // formの値を取得するため、引数にRequest $requestを指定
-    public function index(Request $request)
+    public function index(User $user, Request $request)
     {
         $search = $request->input('search');
 
-        $query = DB::table('stock_cosmetics');
+        $user_id = Auth::id();
+        $stocks = StockCosmetic::where('user_id', $user_id);
+
         if($search !== null) {
             // 全角スペースを半角にする
             $search_split = mb_convert_kana($search, 's');
@@ -30,16 +34,16 @@ class StockCosmeticController extends Controller
 
             foreach($search_split2 as $value)
             {
-                $query
+                $stocks
                     ->where('product', 'like', '%'.$value.'%')
                     ->orWhere('brand', 'like', '%'.$value.'%');
             }
         }
 
-        $query->select('image', 'id', 'product', 'brand');
-        $stock_cosmetics = $query->paginate(15);
+        $stocks->select('image', 'id', 'product', 'brand', 'created_at')->orderBy('created_at', 'desc');
+        $stock_cosmetics = $stocks->paginate(15);
 
-        return view('stock_cosmetics.list_of_stock', compact('stock_cosmetics'));
+        return view('stock_cosmetics.list_of_stock', ['user_id' => $user_id, 'stock_cosmetics' => $stock_cosmetics]);
     }
 
     /**
@@ -60,15 +64,16 @@ class StockCosmeticController extends Controller
      */
     public function store(Stock $request)
     {
+
         $stock_cosmetic = new StockCosmetic();
 
         $stock_cosmetic->product = $request->input('product');
+        $stock_cosmetic->user_id = Auth::id();
         $stock_cosmetic->color = $request->input('color');
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
         $stock_cosmetic->main_category = $request->input('main_category');
-        $stock_cosmetic->category = $request->input('category');
 
 
         $form = $request->all();
@@ -84,7 +89,7 @@ class StockCosmeticController extends Controller
         }
         $stock_cosmetic->save();
 
-        return redirect('stock_cosmetics/list_of_stock');
+        return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }
 
     /**
@@ -132,6 +137,7 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
 
+
         $form = $request->all();
         if (isset($form['image'])) {
             $file = $request->file('image');
@@ -145,7 +151,7 @@ class StockCosmeticController extends Controller
         }
         $stock_cosmetic->fill($form)->save();
 
-        return redirect('stock_cosmetics/list_of_stock');
+        return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }
 
     /**
@@ -160,6 +166,6 @@ class StockCosmeticController extends Controller
         $stock_cosmetic = StockCosmetic::find($id);
         $stock_cosmetic->delete();
 
-        return redirect('stock_cosmetics/list_of_stock');
+        return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }
 }

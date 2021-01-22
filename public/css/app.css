@@ -6641,6 +6641,7 @@ p:after {
 }
 
 .logout a a:hover {
+  color: #212529;
   opacity: 0.5;
 }
 
@@ -6744,7 +6745,7 @@ input[type=date] {
 }
 
 .show-img-form {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-right: 20px;
 }
 
@@ -6763,17 +6764,17 @@ input[type=date] {
   margin-right: 10px;
 }
 
-table {
+.show-table {
   width: 450px;
   margin: 60px 15px 45px 0;
 }
 
-table tr {
+.show-table tr {
   margin-bottom: 15px;
 }
 
-table th,
-td {
+.show-table th,
+.show-table td {
   padding: 20px 5px 5px 5px;
   border-bottom: 1px solid #698a97;
 }
