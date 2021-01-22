@@ -7,24 +7,26 @@
                 <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
             </header>
             <main>
+                 <!-- エラー -->
+                 @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <!-- 入力フォーム -->
                 <form id="task-form" method="POST" action="{{ route('done_task') }}">
                     @csrf
                     <div class="tasks-group">
                         <p>できたことをチェック</p>
                         <input id="brush" type="radio" name="title" value="ブラシ洗浄"><label for="brush">ブラシ洗浄</label>
-
                         <input id="puff" type="radio" name="title" value="パフ洗浄"><label for="puff">パフ洗浄</label>
+                        <input id="pack" type="radio" name="title" value="顔のパック"><label for="pack">顔のパック</label>
+                        <input id="other" type="radio" name="title" value="その他"><label for="other">その他</label>
 
-                        <input id="pack" type="radio" name="title" value="顔のパック"><label for="pack">顔のパック</label><br>
-
-                        <input id="treatment" type="radio" name="title" value="トリートメント"><label for="treatment">トリートメント</label>
-
-                        <input id="peeling" type="radio" name="title" value="ピーリング"><label for="peeling">ピーリング</label><br>
-
-                        <div class="radio-other">
-                            <input id="other" type="radio"> <label for="other">その他</label>
-                            <input id="other" type="text" name="title">
-                        </div>
                     </div>
                     <div class="tasks-group">
                         <label>登録する日付</label><input type="date" class="task-form" name="start">

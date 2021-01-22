@@ -24,12 +24,14 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 // 消費期限のカレンダー登録
-Route::get('/home', 'DoneTaskController@index');
-Route::post('/store', 'DoneTaskController@store')->name('done_task');
+
+    Route::get('/home', 'DoneTaskController@index');
+    Route::post('/store', 'DoneTaskController@store')->name('done_task');
+
 
 // 所持しているコスメの一覧
 Route::prefix('stock_cosmetics')->group(function () {
-    Route::get('/list_of_stock', 'StockCosmeticController@index')->name('list_of_stock');
+    Route::get('/list_of_stock/{user_id}/stock_cosmetics/', 'StockCosmeticController@index')->name('list_of_stock');
     Route::get('/post_stock', 'StockCosmeticController@create')->name('post_stock');
     Route::post('/post_stock', 'StockCosmeticController@store')->name('post_stock');
     Route::get('/show_stock/{id}', 'StockCosmeticController@show')->name('show_stock');

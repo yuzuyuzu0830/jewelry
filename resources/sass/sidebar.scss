@@ -44,8 +44,10 @@
 .dropdown-item {
   background: $purple;
 }
-.logout {
-  &:hover {
+.logout a {
+  color: $black;
+  a:hover {
+    color: $black;
     opacity: .5;
   }
 }

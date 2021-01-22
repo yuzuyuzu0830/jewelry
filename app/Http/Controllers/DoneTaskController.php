@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Models\DoneTask;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\Done;
 
 class DoneTaskController extends Controller
 {
@@ -44,21 +44,15 @@ class DoneTaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Done $request)
     {
-        //
-        $validator = Validator::make($request->all(), [
-            'title' => 'required|max:100',
-            'start' => 'required',
-            'textColor' => 'required'
-        ]);
 
-        if ($validator->failed()) {
-            return redirect()->back();
-        } else {
-            DoneTask::create($request->all());
-        }
-        return redirect()->back();
+        $task = new DoneTask;
+        $task->title = $request->input('title');
+        $task->start = $request->input('start');
+        $task->textColor = $request->input('textColor');
+        $task->save();
+        return redirect('/home');
     }
 
     /**
@@ -70,6 +64,7 @@ class DoneTaskController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
