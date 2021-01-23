@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DoneTask;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Done;
+use Illuminate\Support\Facades\Auth;
 
 class DoneTaskController extends Controller
 {
@@ -16,10 +17,13 @@ class DoneTaskController extends Controller
      */
     public function index(Request $request)
     {
-        //
+        $user_id = Auth::id();
+        $data = DoneTask::where('user_id', $user_id);
+
+
         if ($request->ajax()) {
-            // TODO: DBからカレンダーのデータを取得するように修正する
-            $data = DB::table('done_tasks')->select('title', 'start', 'textColor')->get();
+
+            $data->select('title', 'start', 'textColor')->get();
 
             return response()->json($data);
 
@@ -46,9 +50,9 @@ class DoneTaskController extends Controller
      */
     public function store(Done $request)
     {
-
         $task = new DoneTask;
         $task->title = $request->input('title');
+        $task->user_id = Auth::id();
         $task->start = $request->input('start');
         $task->textColor = $request->input('textColor');
         $task->save();

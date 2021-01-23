@@ -10,7 +10,7 @@ article {
 }
 .stock-items {
   width: 250px;
-  height: 350px;
+  height: 370px;
   background-color: #fff;
   text-decoration: none;
   box-shadow: 5px 5px 10px #ccc;
@@ -21,12 +21,13 @@ article {
     border-radius: 20px 20px 0 0;
     box-shadow: 5px 0 10px #ccc;
   }
+}
+.stock-items-text  {
+  p {
+  margin-bottom: 10px;
+  }
   a {
     color: $letter;
     text-decoration: none;
   }
-}
-.marker {
-  background: linear-gradient(transparent 65%, $blue 65%);
-  font-weight: bold;
 }

@@ -6145,7 +6145,7 @@ readers do not read off random characters that represent icons */
 }
 
 .header {
-  height: 700px;
+  min-height: 100vh;
   background-image: url(/images/hero-image.jpg?3dad550fd1311f846cf5221c66fa1c6a);
   background-size: cover;
   background-position: center top;
@@ -6160,7 +6160,7 @@ readers do not read off random characters that represent icons */
 .header h1 {
   position: absolute;
   bottom: 50px;
-  left: 240px;
+  left: 130px;
   font-family: "Bad Script";
   font-size: 90px;
   color: #7c7c7c;
@@ -6309,12 +6309,13 @@ readers do not read off random characters that represent icons */
   border-bottom: 1px solid #212529;
 }
 
-.tasks-group input[type=radio] label {
-  margin-right: 15px;
+.tasks-group label {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .task-form {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .radio-other {
@@ -6352,7 +6353,7 @@ article {
 
 .stock-items {
   width: 250px;
-  height: 350px;
+  height: 370px;
   background-color: #fff;
   text-decoration: none;
   box-shadow: 5px 5px 10px #ccc;
@@ -6366,14 +6367,13 @@ article {
   box-shadow: 5px 0 10px #ccc;
 }
 
-.stock-items a {
-  color: #7c7c7c;
-  text-decoration: none;
+.stock-items-text p {
+  margin-bottom: 10px;
 }
 
-.marker {
-  background: linear-gradient(transparent 65%, #b3d3db 65%);
-  font-weight: bold;
+.stock-items-text a {
+  color: #7c7c7c;
+  text-decoration: none;
 }
 
 .modal {
@@ -6587,7 +6587,7 @@ article {
 }
 
 .logo {
-  margin-top: 130px;
+  margin-top: 100px;
 }
 
 .logo img {
@@ -17839,5 +17839,10 @@ h1 {
 
 .cancel-btn {
   color: #212529;
+}
+
+.marker {
+  background: linear-gradient(transparent 65%, #b3d3db 65%);
+  font-weight: bold;
 }
 
