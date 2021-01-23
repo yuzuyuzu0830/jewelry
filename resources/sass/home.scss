@@ -24,12 +24,13 @@
     margin-bottom: 15px;
     border-bottom: 1px solid $black;
   }
-  input[type="radio"] label {
-    margin-right: 15px;
-  }
+}
+.tasks-group label {
+  display: inline-block;
+  margin-right: 5px;
 }
 .task-form {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .radio-other {
   display: flex;

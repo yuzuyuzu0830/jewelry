@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\StockCosmetic;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\Stock;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +17,7 @@ class StockCosmeticController extends Controller
      */
 
     // formの値を取得するため、引数にRequest $requestを指定
-    public function index(User $user, Request $request)
+    public function index(Request $request)
     {
         $search = $request->input('search');
 
@@ -87,7 +85,7 @@ class StockCosmeticController extends Controller
             $form['image'] = $filename;
             $file->move('upload/stock_cosmetics', $filename);
         }
-        $stock_cosmetic->save();
+        $stock_cosmetic->fill($form)->save();
 
         return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }

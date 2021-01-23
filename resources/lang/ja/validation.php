@@ -127,14 +127,8 @@ return [
         'purchaseDate' => '購入日',
         'main_category' => 'カテゴリー',
         'category' => 'カテゴリー',
+        'title' => 'できたことの選択',
+        'start' => '登録する日付',
     ],
 
 ];
-
-$stock_cosmetic->product = $request->input('product');
-        $stock_cosmetic->color = $request->input('color');
-        $stock_cosmetic->brand = $request->input('brand');
-        $stock_cosmetic->price = $request->input('price');
-        $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
-        $stock_cosmetic->main_category = $request->input('main_category');
-        $stock_cosmetic->category = $request->input('category');

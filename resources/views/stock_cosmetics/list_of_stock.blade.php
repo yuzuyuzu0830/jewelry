@@ -14,7 +14,7 @@
                     @else
                     <img src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="cosmetic-image">
                     @endif
-                    <div class="pt-3 pb-2 pr-3 pl-3">
+                    <div class="stock-items-text pt-3 pb-2 pr-3 pl-3">
                         <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>
                         <span class="marker"><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">詳細/編集</a></span>
                     </div>

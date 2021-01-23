@@ -50,13 +50,13 @@
                         <div class="group pulldown">
                             <label for="main-category">商品カテゴリー</label><select id="main-category" class="main-category mb-2" name="main_category">
                                 <option value="">カテゴリーを選択</option>
-                                <option value="1">ベースメイク</option>
-                                <option value="2">アイメイク</option>
-                                <option value="3">リップメイク</option>
-                                <option value="4">ネイル・ネイルケア</option>
-                                <option value="5">スキンケア</option>
-                                <option value="6">ヘアケア</option>
-                                <option value="7">その他</option>
+                                <option value="ベースメイク">ベースメイク</option>
+                                <option value="アイメイク">アイメイク</option>
+                                <option value="リップメイク">リップメイク</option>
+                                <option value="ネイル・ネイル">ネイル・ネイルケア</option>
+                                <option value="スキンケア">スキンケア</option>
+                                <option value="ヘアケア">ヘアケア</option>
+                                <option value="その他">その他</option>
                             </select>
                         </div>
                         <div class="form-btn">

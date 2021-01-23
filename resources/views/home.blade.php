@@ -26,21 +26,21 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <script>
-         $(document).ready(function () {
-            $('#calendar').fullCalendar({
-                firstDay: 1,
-                headerToolbar: {
-                    right: 'prevYear,prev,next,nextYear'
-                },
-                editable: true,
-                eventLimit: true,
-                selectable: true,
-                events: '/home',
-                backgroundColor: 'black',
-                contentHeight: 550,
-                aspectRatio: 2,
+            $(document).ready(function () {
+                $('#calendar').fullCalendar({
+                    firstDay: 1,
+                    headerToolbar: {
+                        right: 'prevYear,prev,next,nextYear'
+                    },
+                    editable: true,
+                    eventLimit: true,
+                    selectable: true,
+                    events: '/home',
+                    backgroundColor: 'black',
+                    contentHeight: 550,
+                    aspectRatio: 2,
+                });
             });
-        });
         </script>
     </head>
     <body>
@@ -48,6 +48,16 @@
             <article class="col-9">
                 <div class="container pr-6 pl-6">
                     <h1 class=" mt-5 mb-5 ml-3">My beauty Calendar</h1>
+                    <!-- エラー -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <section class="calendar mb-5">
                         <div id="calendar"></div>
                     </section>
