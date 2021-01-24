@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function stock_cosmetics() {
-        return $this->hasMany('App\Models\StockCosmetic', 'App\Models\DoneTask');
+        return $this->hasMany('App\Models\StockCosmetic', 'App\Models\DoneTask', 'App\Models\NewItem');
     }
 }

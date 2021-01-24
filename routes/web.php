@@ -39,3 +39,14 @@ Route::prefix('stock_cosmetics')->group(function () {
     Route::post('/update_stock/{id}', 'StockCosmeticController@update')->name('update_stock');
     Route::post('/destroy_stock/{id}', 'StockCosmeticController@destroy')->name('destroy_stock');
 });
+
+// 購入予定のコスメ一覧
+Route::prefix('new_items')->group(function () {
+    Route::get('/list_of_item/{user_id}/new_items/', 'NewItemController@index')->name('list_of_item');
+    Route::get('/post_item', 'NewItemController@create')->name('post_item');
+    Route::post('/post_item', 'NewItemController@store')->name('post_item');
+    Route::get('/show_item/{id}', 'NewItemController@show')->name('show_item');
+    Route::get('/edit_item/{id}', 'NewItemController@edit')->name('edit_item');
+    Route::post('/update_item/{id}', 'NewItemController@update')->name('update_item');
+    Route::post('/destroy_item/{id}', 'NewItemController@destroy')->name('destroy_item');
+});
