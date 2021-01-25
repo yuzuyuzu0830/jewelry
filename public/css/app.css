@@ -6792,8 +6792,32 @@ input[type=date] {
   border-radius: 10px;
 }
 
+.edit-img-form input {
+  margin-top: 15px;
+}
+
 .stock-group {
   margin-bottom: 15px;
+}
+
+.wish-list {
+  width: 910px;
+  height: 190px;
+  display: flex;
+}
+
+.table {
+  font-size: 20px;
+  background-color: #fff;
+}
+
+.table img {
+  width: 140px;
+  height: 130px;
+}
+
+.arrow-color {
+  color: #7c7c7c;
 }
 
 @font-face {

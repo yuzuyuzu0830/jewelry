@@ -6,21 +6,37 @@
     <article class="col-9">
         <div class="container pr-4 pl-5">
             <h1 class="mt-5 mb-5">My cosmetics wish list</h1>
-            <div class="list">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">イメージ</th>
+                        <th scope="col">商品名</th>
+                        <th scope="col">ブランド</th>
+                        <th scope="col">発売日</th>
+                        <th scope="col">詳細/編集</th>
+                    </tr>
+                </thead>
                 @foreach($new_items as $new_item)
-                <div class="stock-items mb-5">
-                    @if($new_item->image === null)
-                    <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
-                    @else
-                    <img src="{{ asset('upload/new_items/' . $new_item->image) }}" alt="cosmetic-image">
-                    @endif
-                    <div class="stock-items-text pt-3 pb-2 pr-3 pl-3">
-                        <p>{{ $new_item->title  . '/'  .$new_item->brand }}</p>
-                        <span class="marker"><a href="{{ route('show_item', ['id' => $new_item->id]) }}">詳細/編集</a></span>
-                    </div>
-                </div>
+                <tbody>
+                    <tr>
+                        <td>
+                            @if($new_item->image === null)
+                                <img src="{{ asset('img/no-image2.jpg') }}" alt="no-image">
+                            @else
+                                <img src="{{ asset('upload/new_items/' . $new_item->image) }}" alt="cosmetic-image">
+                            @endif
+                        </td>
+                        <td>{{ $new_item->title }}</td>
+                        <td>{{ $new_item->brand }}</td>
+                        <td>{{ $new_item->start }}</td>
+                        <td>
+                            <a href="{{ route('show_item', ['id' => $new_item->id]) }}"><i class="fas fa-arrow-circle-right fa-2x arrow-color"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
                 @endforeach
-            </div>
+            </table>
+
             <div class="post-button mb-5">
                 <a href="{{ route('post_item') }}">アイテムを追加する</a>
             </div>
