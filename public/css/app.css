@@ -6648,7 +6648,7 @@ p:after {
 
 .post-img img {
   height: 700px;
-  width: 400px;
+  width: 440px;
 }
 
 .group input {
@@ -6817,7 +6817,7 @@ input[type=date] {
 
 .new-item-list td {
   padding: 12px;
-  font-size: 28px;
+  font-size: 18px;
 }
 
 .new-item-list img {

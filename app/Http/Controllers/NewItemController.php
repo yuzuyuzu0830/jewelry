@@ -48,7 +48,7 @@ class NewItemController extends Controller
      */
     public function create()
     {
-        return view('new_items.edit_item');
+        return view('new_items.post_item');
     }
 
     /**

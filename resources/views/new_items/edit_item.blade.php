@@ -10,7 +10,7 @@
                     @csrf
                     <div edit-img-form>
                         @if($new_item->image === null)
-                            <img class="edit-img" src="{{ asset('img/no-image.jpg') }}">
+                            <img class="edit-img" src="{{ asset('img/no-image2.jpg') }}">
                         @else
                         <img class="edit-img" src="{{ asset('upload/new_items/' . $new_item->image) }}" alt="Non-Image">
                         @endif
