@@ -6,14 +6,14 @@
     <article class="col-9">
         <div class="container pr-4 pl-5">
             <h1 class="mt-5 mb-5">My cosmetics wish list</h1>
-            <table class="table">
+            <table class="new-item-list">
                 <thead>
                     <tr>
-                        <th scope="col">イメージ</th>
-                        <th scope="col">商品名</th>
-                        <th scope="col">ブランド</th>
-                        <th scope="col">発売日</th>
-                        <th scope="col">詳細/編集</th>
+                        <th >イメージ</th>
+                        <th>商品名</th>
+                        <th>ブランド</th>
+                        <th>発売日</th>
+                        <th>詳細/編集</th>
                     </tr>
                 </thead>
                 @foreach($new_items as $new_item)

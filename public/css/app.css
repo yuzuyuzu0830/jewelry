@@ -6354,6 +6354,7 @@ article {
 .stock-items {
   width: 250px;
   height: 370px;
+  margin-bottom: 20px;
   background-color: #fff;
   text-decoration: none;
   box-shadow: 5px 5px 10px #ccc;
@@ -6800,20 +6801,28 @@ input[type=date] {
   margin-bottom: 15px;
 }
 
-.wish-list {
-  width: 910px;
-  height: 190px;
-  display: flex;
-}
-
-.table {
-  font-size: 20px;
+.new-item-list {
+  width: 950px;
+  margin-bottom: 20px;
+  text-align: center;
   background-color: #fff;
 }
 
-.table img {
-  width: 140px;
-  height: 130px;
+.new-item-list th {
+  background-color: #7c7c7c;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.new-item-list td {
+  padding: 12px;
+  font-size: 28px;
+}
+
+.new-item-list img {
+  width: 100px;
+  height: 100px;
 }
 
 .arrow-color {

@@ -48,7 +48,7 @@ class NewItemController extends Controller
      */
     public function create()
     {
-        return view('new_items.post_item');
+        return view('new_items.edit_item');
     }
 
     /**
@@ -119,10 +119,9 @@ class NewItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $new_item = new NewItem();
+        $new_item = NewItem::find($id);
 
         $new_item->title = $request->input('title');
-        $new_item->user_id = Auth::id();
         $new_item->color = $request->input('color');
         $new_item->brand = $request->input('brand');
         $new_item->price = $request->input('price');
