@@ -18,17 +18,11 @@ class DoneTaskController extends Controller
     public function index(Request $request)
     {
         $user_id = Auth::id();
-        $data = DoneTask::where('user_id', $user_id);
+    if ($request->ajax()) {
 
-
-        if ($request->ajax()) {
-
-            $data->select('title', 'start', 'textColor')->get();
-
-            return response()->json($data);
-
+        $data = DoneTask::select('title', 'start', 'textColor')->where('user_id', $user_id)->get();
+        return response()->json($data);
         }
-
         return view('home');
     }
 
