@@ -1,3 +1,5 @@
+# Jewelry
+
 ![スクリーンショット 2021-01-27 10 40 21](https://user-images.githubusercontent.com/73946510/106109674-255bfa80-618d-11eb-9155-039921faac02.png)
 
 # 概要
@@ -31,7 +33,12 @@
 
 ![スクリーンショット 2021-01-28 17 48 47](https://user-images.githubusercontent.com/73946510/106117140-1168c680-6196-11eb-81b8-c1fadf6cb854.png)
 
+
 * 持っている化粧品は画像を中心に一覧が表示されるようにし、発売予定の商品は画像がない可能性があるため、文字を中心に一覧が表示されるようにしています。
+
+![スクリーンショット 2021-01-28 17 49 27](https://user-images.githubusercontent.com/73946510/106118657-b3d57980-6197-11eb-8d40-e884867cd6d7.png)
+
+![スクリーンショット 2021-01-28 17 49 11](https://user-images.githubusercontent.com/73946510/106118767-ce0f5780-6197-11eb-9e87-3ad223d9a2f5.png)
 
 
 # 使用技術
