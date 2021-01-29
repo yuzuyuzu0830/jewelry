@@ -44,13 +44,13 @@
 # 使用技術
 * フロントエンド
     * SCSS
-    * Bootstrap 4.5.0
+    * Bootstrap 5.0
     * JavaScript、jQuery、Ajax
     
 * バックエンド
-    * PHP 7.4.9
-    * Laravel 6.18.36
+    * PHP 7.4.13
+    * Laravel 6.20.9
 
 * 開発環境
     * Docker / Docker-compose
-    * MySQL 5.7.31
+    * MySQL 5.7.30
