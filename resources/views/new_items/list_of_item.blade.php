@@ -36,12 +36,14 @@
                 </tbody>
                 @endforeach
             </table>
-
-            <div class="post-button mb-5">
-                <a href="{{ route('post_item') }}">アイテムを追加する</a>
-            </div>
-            <!-- ページネーション -->
-            {{ $new_items->links() }}
+            <section class="page-bottom">
+                <div class="page-link">
+                    {{ $new_items->links('vendor.pagination.pagination') }}
+                </div>
+                <div class="post-button">
+                    <a href="{{ route('post_item') }}">アイテムを追加する</a>
+                </div>
+            </section>
         </div>
     </article>
 

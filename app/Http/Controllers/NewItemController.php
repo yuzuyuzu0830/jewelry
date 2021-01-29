@@ -35,7 +35,7 @@ class NewItemController extends Controller
             }
         }
 
-        $items->select('image', 'id', 'title', 'brand', 'created_at')->orderBy('created_at', 'desc');
+        $items->select('image', 'id', 'title', 'brand', 'start', 'created_at')->orderBy('created_at', 'desc');
         $new_items = $items->paginate(15);
 
         return view('new_items.list_of_item', ['user_id' => $user_id, 'new_items' => $new_items]);
