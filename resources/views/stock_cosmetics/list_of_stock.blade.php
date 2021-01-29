@@ -54,10 +54,10 @@
                         <a class="nav-link active" href="{{ url('/home') }}">ホーム（カレンダー）</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('list_of_item', ['user_id' => Auth::id()]) }}">ほしい物リスト</a>
+                        <a class="nav-link disabled" href="#">購入品リスト</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">購入品リスト</a>
+                        <a class="nav-link" href="{{ route('list_of_item', ['user_id' => Auth::id()]) }}">ほしい物リスト</a>
                     </li>
                 </ul>
             </nav>
