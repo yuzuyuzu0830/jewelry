@@ -21,7 +21,7 @@
                                     <th>商品名</th><td>{{ $stock_cosmetic->product }}</td>
                                 </tr>
                                 <tr>
-                                    <th>カラー</th><td><{{ $stock_cosmetic->color }}/td>
+                                    <th>カラー</th><td>{{ $stock_cosmetic->color }}</td>
                                 </tr>
                                 <tr>
                                     <th>ブランド</th><td>{{ $stock_cosmetic->brand }}</td>
