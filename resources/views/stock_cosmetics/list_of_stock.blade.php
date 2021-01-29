@@ -41,8 +41,11 @@
                     <div class="nav-title">
                         <p class="mb-4">アイテムを検索する</p>
                     </div>
-                    <input class="search" name="search" type="search" placeholder="エクセル　パウダー" aria-label="Search">
-                    <button class="post-search" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="search-box">
+                        <input class="search" name="search" type="search" placeholder="エクセル　パウダー" aria-label="Search">
+                        <button class="post-search" type="submit">search</button>
+                    </div>
+
                 </form>
             </section>
             <nav class="menu mb-5">
