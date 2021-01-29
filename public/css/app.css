@@ -6605,6 +6605,61 @@ article {
   opacity: 0.5;
 }
 
+.nav-title p {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+  font-size: 15px;
+}
+
+.nav-title p:before,
+.nav-title p:after {
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  content: "";
+  background-color: #7c7c7c;
+}
+
+.nav-title,
+p:before {
+  left: 0;
+}
+
+.nav-title,
+p:after {
+  right: 0;
+}
+
+.search-box .search {
+  padding: 5px 8px;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.search-box::-moz-placeholder {
+  font-size: 12px;
+}
+
+.search-box:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.search-box::placeholder {
+  font-size: 12px;
+}
+
+.search-box .post-search {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  background: #7c7c7c;
+  color: #ecebea;
+}
+
 .dropdown-item {
   background: #b8acc8;
 }
@@ -6750,6 +6805,7 @@ input[type=date] {
 .show-table td {
   padding: 20px 5px 5px 5px;
   border-bottom: 1px solid #698a97;
+  border-top: none;
 }
 
 .edit-form {

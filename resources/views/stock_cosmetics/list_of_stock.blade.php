@@ -41,8 +41,11 @@
                     <div class="nav-title">
                         <p class="mb-4">アイテムを検索する</p>
                     </div>
-                    <input class="search" name="search" type="search" placeholder="エクセル　パウダー" aria-label="Search">
-                    <button class="post-search" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="search-box">
+                        <input class="search" name="search" type="search" placeholder="エクセル　パウダー" aria-label="Search">
+                        <button class="post-search" type="submit">search</button>
+                    </div>
+
                 </form>
             </section>
             <nav class="menu mb-5">
@@ -54,10 +57,10 @@
                         <a class="nav-link active" href="{{ url('/home') }}">ホーム（カレンダー）</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('list_of_item', ['user_id' => Auth::id()]) }}">ほしい物リスト</a>
+                        <a class="nav-link disabled" href="#">購入品リスト</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">購入品リスト</a>
+                        <a class="nav-link" href="{{ route('list_of_item', ['user_id' => Auth::id()]) }}">ほしい物リスト</a>
                     </li>
                 </ul>
             </nav>
