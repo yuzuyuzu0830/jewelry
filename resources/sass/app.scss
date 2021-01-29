@@ -165,3 +165,21 @@ h1 {
   background: linear-gradient(transparent 65%, $blue 65%);
   font-weight: bold;
 }
+
+// ページネーション
+.pagination a, .pagination span {
+  padding: 8px;
+  font-size: 24px;
+  color: $dark-purple;
+  border-color: $dark-purple;
+}
+.pagination span {
+  opacity: .5;
+}
+.page-link {
+  border: none;
+}
+.page-bottom {
+  display: flex;
+  margin-bottom: 25px;
+}

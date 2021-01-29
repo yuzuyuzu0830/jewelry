@@ -21,11 +21,14 @@
                 </div>
                 @endforeach
             </div>
-            <div class="post-button mb-5">
-                <a href="{{ route('post_stock') }}">アイテムを追加する</a>
-            </div>
-            <!-- ページネーション -->
-            {{ $stock_cosmetics->links() }}
+            <section class="page-bottom">
+                <div class="page-link">
+                    {{ $stock_cosmetics->links('vendor.pagination.pagination') }}
+                </div>
+                <div class="post-button">
+                    <a href="{{ route('post_stock') }}">アイテムを追加する</a>
+                </div>
+            </section>
         </div>
     </article>
 

@@ -14,32 +14,6 @@
     opacity: .5;
   }
 }
-// メニューの表記
-.nav-title {
-  p {
-    position: relative;
-    display: inline-block;
-    padding: 0 55px;
-    font-size: 15px;
-    &:before, &:after {
-      width: 35px;
-      height: 2px;
-      position: absolute;
-      top: 50%;
-      display: inline-block;
-      content: '';
-      background-color: $letter;
-    }
-  }
-}
-.nav-title,p:before {
-  left:0;
-}
-.nav-title,p:after {
-  right: 0;
-}
-
-
 //　ログアウト
 .dropdown-item {
   background: $purple;
