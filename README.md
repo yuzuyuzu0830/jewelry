@@ -43,8 +43,8 @@
 
 # 使用技術
 * フロントエンド
-    * Bootstrap 4.5.0
     * SCSS
+    * Bootstrap 4.5.0
     * JavaScript、jQuery、Ajax
     
 * バックエンド
@@ -52,5 +52,5 @@
     * Laravel 6.18.36
 
 * 開発環境
-    * Docker/Docker-compose
+    * Docker / Docker-compose
     * MySQL 5.7.31
