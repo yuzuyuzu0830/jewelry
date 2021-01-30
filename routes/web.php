@@ -30,7 +30,7 @@ Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 
 // 所持しているコスメの一覧
-Route::prefix('stock_cosmetics')->group(function () {
+Route::group(['prefix'=>'stock_cosmetics', 'middleware' => 'auth'], function () {
     Route::get('/list_of_stock/{user_id}/stock_cosmetics/', 'StockCosmeticController@index')->name('list_of_stock');
     Route::get('/post_stock', 'StockCosmeticController@create')->name('post_stock');
     Route::post('/post_stock', 'StockCosmeticController@store')->name('post_stock');
@@ -41,7 +41,7 @@ Route::prefix('stock_cosmetics')->group(function () {
 });
 
 // 購入予定のコスメ一覧
-Route::prefix('new_items')->group(function () {
+Route::group(['prefix'=>'new_items', 'middleware' => 'auth'], function() {
     Route::get('/list_of_item/{user_id}/new_items/', 'NewItemController@index')->name('list_of_item');
     Route::get('/post_item', 'NewItemController@create')->name('post_item');
     Route::post('/post_item', 'NewItemController@store')->name('post_item');
