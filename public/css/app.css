@@ -6832,6 +6832,7 @@ input[type=date] {
 .new-item-list {
   width: 950px;
   margin-bottom: 40px;
+  border-radius: 5px;
   text-align: center;
   background-color: #fff;
 }
