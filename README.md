@@ -26,7 +26,7 @@ http://mighty-springs-27172.herokuapp.com/ <br>
 * ページネーション機能
 * 画像アップロード機能
 * 検索機能
-    * 商品名、ブランド名等キーワード検索が可能
+    * 複数条件による検索が可能
 * カレンダー表示機能(今日できたことをカレンダーで管理)
 * 化粧品の登録関連(CRUD)
 
@@ -55,5 +55,4 @@ http://mighty-springs-27172.herokuapp.com/ <br>
     * PHPUnit 8.5.8
 
 * 開発環境
-    * Docker / Docker-compose
     * MySQL 5.7.30
