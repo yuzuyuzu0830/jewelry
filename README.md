@@ -6,7 +6,8 @@
 日々の美容ケアや化粧品の管理など全てを、1つのアプリで行うことを目指したサービスです。
 
 # URL
-http://mighty-springs-27172.herokuapp.com/
+http://mighty-springs-27172.herokuapp.com/ <br>
+
 右上のゲストログインボタンから会員登録なしでログインができます。
 
 # 制作背景
