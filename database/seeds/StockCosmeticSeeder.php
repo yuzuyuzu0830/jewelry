@@ -12,6 +12,6 @@ class StockCosmeticSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\StockCosmetic::class, 5)->create();
+        factory(App\Models\StockCosmetic::class, 20)->create();
     }
 }
