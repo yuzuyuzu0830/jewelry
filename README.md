@@ -52,6 +52,7 @@ http://mighty-springs-27172.herokuapp.com/ <br>
 * バックエンド
     * PHP 7.4.13
     * Laravel 6.20.9
+    * PHPUnit 8.5.8
 
 * 開発環境
     * Docker / Docker-compose
