@@ -6282,7 +6282,7 @@ readers do not read off random characters that represent icons */
 }
 
 #calendar {
-  width: 1000px;
+  width: 84%;
   margin: 0 auto;
   margin-bottom: 25px;
   background-color: #fff;
@@ -6832,7 +6832,6 @@ input[type=date] {
 .new-item-list {
   width: 950px;
   margin-bottom: 40px;
-  border-radius: 5px;
   text-align: center;
   background-color: #fff;
 }
