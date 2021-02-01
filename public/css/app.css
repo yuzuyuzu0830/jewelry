@@ -6282,7 +6282,7 @@ readers do not read off random characters that represent icons */
 }
 
 #calendar {
-  width: 84%;
+  width: 88%;
   margin: 0 auto;
   margin-bottom: 25px;
   background-color: #fff;
@@ -6301,25 +6301,28 @@ readers do not read off random characters that represent icons */
   color: #ecebea;
 }
 
-.tasks-group input[type=date],
-.tasks-group input[type=text] {
+.tasks-group input[type=text],
+.tasks-group input[type=date] {
   width: 250px;
   padding: 0;
-  margin-bottom: 15px;
   border-bottom: 1px solid #212529;
+}
+
+.tasks-group input[type=date] {
+  margin-bottom: 27px;
+}
+
+.tasks-group input[type=checkbox] {
+  margin-right: 5px;
 }
 
 .tasks-group label {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 20px;
 }
 
 .task-form {
   margin-bottom: 20px;
-}
-
-.radio-other {
-  display: flex;
 }
 
 button.modal__btn.modal__btn-primary.mr-3 {
