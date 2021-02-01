@@ -18,22 +18,24 @@
 }
 // modal
 .tasks-group {
-  input[type="date"], input[type="text"] {
+    input[type="text"], input[type="date"] {
     width: 250px;
     padding: 0;
-    margin-bottom: 15px;
     border-bottom: 1px solid $black;
+  }
+  input[type="date"] {
+    margin-bottom: 27px;
+  }
+  input[type="checkbox"] {
+    margin-right: 5px;
   }
 }
 .tasks-group label {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 20px;
 }
 .task-form {
   margin-bottom: 20px;
-}
-.radio-other {
-  display: flex;
 }
 button.modal__btn.modal__btn-primary.mr-3 {
   width: 80px;

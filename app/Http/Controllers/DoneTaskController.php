@@ -45,10 +45,14 @@ class DoneTaskController extends Controller
     public function store(Done $request)
     {
         $task = new DoneTask;
-        $task->title = $request->input('title');
         $task->user_id = Auth::id();
         $task->start = $request->input('start');
         $task->textColor = $request->input('textColor');
+        if(isset($_POST['title'])) {
+            $title = implode(',', $_POST['title']);
+            $task->title = $title;
+        }
+
         $task->save();
         return redirect('/home');
     }

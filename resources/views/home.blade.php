@@ -30,17 +30,19 @@
                 $('#calendar').fullCalendar({
                     firstDay: 1,
                     headerToolbar: {
-                        right: 'prevYear,prev,next,nextYear'
+                        right: 'prev,next'
                     },
                     editable: true,
                     eventLimit: true,
                     selectable: true,
                     events: '/home',
-                    backgroundColor: 'black',
                     contentHeight: 550,
                     aspectRatio: 2,
+                    eventClick: function(info) {
+                        alert('test');
+                    }
                 });
-            });
+            })
         </script>
     </head>
     <body>
@@ -62,7 +64,7 @@
                         <div id="calendar"></div>
                     </section>
                     <div class="post-button mb-5">
-                        <a data-micromodal-trigger="modal-1" class="calendar-modal">I've Done…</a>
+                        <a data-micromodal-trigger="modal-1" id="modal" class="calendar-modal">I've Done…</a>
                     </div>
                     @include('layouts.modal')
                 </div>
