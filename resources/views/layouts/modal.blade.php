@@ -16,7 +16,7 @@
                         <input id="puff" type="checkbox" name="title[]" value="パフ洗浄"><label for="puff">パフ洗浄</label>
                         <input id="pack" type="checkbox" name="title[]" value="顔のパック"><label for="pack">顔のパック</label><br>
                         <input id="peeling" type="checkbox" name="title[]" value="ピーリング"><label for="peeling">ピーリング</label>
-                        <input id="treatment" type="checkbox" name="title[]" value="トリートメント"><label for="treatment">トリートメント</label><br>
+                        <input id="treatment" type="checkbox" name="title[]" value="トリートメント"><label for="treatment">ヘアトリートメント</label><br>
                         <div class="form-check form-check-inline">
                         <label for="other"><input type="checkbox"><label for="other">その他</label><input id="other" type="text" name="title[]">
                         </div>
