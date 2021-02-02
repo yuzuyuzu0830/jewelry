@@ -73,7 +73,7 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
         $stock_cosmetic->main_category = $request->input('main_category');
 
-
+        // image
         $form = $request->all();
         if (isset($form['image'])) {
             $file = $request->file('image');
@@ -85,6 +85,12 @@ class StockCosmeticController extends Controller
             $form['image'] = $filename;
             $file->move('upload/stock_cosmetics', $filename);
         }
+
+        // tag
+        // #で始まる単語を取得し、$matchに多次元配列で格納される
+        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->tags, $match);
+        dd($match);
+
         $stock_cosmetic->fill($form)->save();
 
         return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');

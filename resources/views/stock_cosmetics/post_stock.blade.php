@@ -59,6 +59,10 @@
                                 <option value="その他">その他</option>
                             </select>
                         </div>
+                        <div class="gro">
+                            <label for="stock-tag"><input id="stock-tag" type="text" name="tags" value="{{ old('tags') }}">
+                            </label>
+                        </div>
                         <div class="form-btn">
                             <input class="submit-btn mr-3" type="submit" value="登録">
                             <span class="marker"><a class="cancel-btn" href="{{ route('list_of_stock', ['user_id' => Auth::id()]) }}">キャンセル</a></span>
