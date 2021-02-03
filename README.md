@@ -31,7 +31,7 @@ http://mighty-springs-27172.herokuapp.com/ <br>
 * 化粧品の登録関連(CRUD)
 
 # ER図
-![スクリーンショット 2021-02-03 15 52 10](https://user-images.githubusercontent.com/73946510/106709567-15826180-6638-11eb-8a29-239e2286b0d1.png)
+![スクリーンショット 2021-02-03 20 02 00](https://user-images.githubusercontent.com/73946510/106738113-e5988580-665a-11eb-9750-69f04e6b7ccc.png)
 
 # 使用イメージ
 * 今日できたことリストをカレンダーで表示することで、一目でわかるようになっています。
