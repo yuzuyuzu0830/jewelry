@@ -29,6 +29,7 @@ http://mighty-springs-27172.herokuapp.com/ <br>
     * 複数条件による検索が可能
 * カレンダー表示機能(今日できたことをカレンダーで管理)
 * 化粧品の登録関連(CRUD)
+* タグ付け機能(多対多のリレーション)
 
 # ER図
 ![スクリーンショット 2021-02-03 20 02 00](https://user-images.githubusercontent.com/73946510/106738113-e5988580-665a-11eb-9750-69f04e6b7ccc.png)
