@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use App\Models\NewItem;
+use App\Models\Label;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -67,8 +68,6 @@ class NewItemController extends Controller
         $new_item->brand = $request->input('brand');
         $new_item->price = $request->input('price');
         $new_item->start = $request->input('start');
-        $new_item->main_category = $request->input('main_category');
-
 
         $form = $request->all();
         if (isset($form['image'])) {
@@ -81,7 +80,26 @@ class NewItemController extends Controller
             $form['image'] = $filename;
             $file->move('upload/new_items', $filename);
         }
+
+        // tag
+        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->labels, $match);
+        $labels=[];
+        foreach($match[1] as $label)
+        {
+            $records = Label::firstOrCreate(['name' => $label]);
+            // $recordsを$tagsの配列に追加
+            array_push($labels, $records);
+        }
+
+        $labels_id = [];
+        foreach($labels as $label)
+        {
+            array_push($labels_id, $label['id']);
+        }
+
         $new_item->fill($form)->save();
+
+        $new_item->labels()->attach($labels_id);
 
         return redirect('new_items/list_of_item/{user_id}/new_items');
     }
@@ -126,8 +144,6 @@ class NewItemController extends Controller
         $new_item->brand = $request->input('brand');
         $new_item->price = $request->input('price');
         $new_item->start = $request->input('start');
-        $new_item->main_category = $request->input('main_category');
-
 
         $form = $request->all();
         if (isset($form['image'])) {

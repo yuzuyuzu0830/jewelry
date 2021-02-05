@@ -37325,12 +37325,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_stock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_post_stock__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _stock_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stock_modal */ "./resources/js/stock_modal.js");
 /* harmony import */ var _stock_modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_stock_modal__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./toastr */ "./resources/js/toastr.js");
+/* harmony import */ var _toastr__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_toastr__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -37445,6 +37448,33 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(module, exports) {
 
 MicroModal.init();
+
+/***/ }),
+
+/***/ "./resources/js/toastr.js":
+/*!********************************!*\
+  !*** ./resources/js/toastr.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
 
 /***/ }),
 

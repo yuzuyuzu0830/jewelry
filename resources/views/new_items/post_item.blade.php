@@ -47,17 +47,8 @@
                         <div class="group">
                             <label for="start">購入日</label><input id="start" type="date" name="start">
                         </div>
-                        <div class="group pulldown">
-                            <label for="main-category">商品カテゴリー</label><select id="main-category" class="main-category mb-2" name="main_category">
-                                <option value="">カテゴリーを選択</option>
-                                <option value="ベースメイク">ベースメイク</option>
-                                <option value="アイメイク">アイメイク</option>
-                                <option value="リップメイク">リップメイク</option>
-                                <option value="ネイル・ネイル">ネイル・ネイルケア</option>
-                                <option value="スキンケア">スキンケア</option>
-                                <option value="ヘアケア">ヘアケア</option>
-                                <option value="その他">その他</option>
-                            </select>
+                        <div class="group">
+                            <label for="item-tag">タグをつける</label><input id="item-tag" type="text" name="labels" value="{{ old('labels') }}" placeholder="#リップ">
                         </div>
                         <div class="form-btn">
                             <input class="submit-btn mr-3" type="submit" value="登録">

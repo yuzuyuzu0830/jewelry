@@ -22,7 +22,6 @@ class CreateStockCosmeticsTable extends Migration
             $table->string('brand', 100)->nullable();
             $table->integer('price')->nullable();
             $table->date('purchaseDate')->nullable();
-            $table->string('main_category');
             $table->timestamps();
         });
     }

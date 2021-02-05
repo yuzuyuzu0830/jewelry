@@ -12,4 +12,8 @@ class NewItem extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function labels () {
+        return $this->belongsToMany('App\Models\Label');
+    }
 }

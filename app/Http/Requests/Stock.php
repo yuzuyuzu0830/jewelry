@@ -31,7 +31,7 @@ class Stock extends FormRequest
             'brand' => 'nullable|string|max:100',
             'price' => 'nullable|numeric',
             'purchaseDate' => 'nullable',
-            'main_category' => 'required',
+            'name' => 'nullable|string|max:10',
         ];
     }
 }

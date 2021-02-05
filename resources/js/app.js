@@ -6,9 +6,7 @@
 
 require('./bootstrap');
 
-import './post_stock';
-import './stock_modal';
-
+import 'toastr';
 
 /**
  * The following block of code may be used to automatically register your

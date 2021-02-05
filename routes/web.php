@@ -23,11 +23,10 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 // ゲストユーザーログイン
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
-// 消費期限のカレンダー登録
-
+// カレンダー登録
     Route::get('/home', 'DoneTaskController@index');
     Route::post('/store', 'DoneTaskController@store')->name('done_task');
-
+    Route::post('/editEventDate', 'DoneTaskController@editEventDate')->name('editEvent');
 
 // 所持しているコスメの一覧
 Route::group(['prefix'=>'stock_cosmetics', 'middleware' => 'auth'], function () {
