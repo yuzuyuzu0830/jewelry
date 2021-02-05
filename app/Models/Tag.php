@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class StockTag extends Model
+class Tag extends Model
 {
-    public function stock_cosmetic()
-    {
+    protected $fillable = ['name'];
+
+    public function stock_cosmetics () {
         return $this->belongsToMany('App\Models\StockCosmetic');
     }
 }

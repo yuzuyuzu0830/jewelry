@@ -14,6 +14,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js"></script>
         <!-- fullcalendar script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
         <!-- fullcalendar style -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 
@@ -24,7 +25,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+        <!-- FullCalendar -->
         <script>
             $(document).ready(function () {
                 $('#calendar').fullCalendar({
@@ -38,8 +39,11 @@
                     events: '/home',
                     contentHeight: 550,
                     aspectRatio: 2,
+
                     eventClick: function(info) {
-                        alert('test');
+                        document.getElementById("id").value = info.id;
+                        document.getElementById("start").value = info.start;
+                        MicroModal.show('modal-2');
                     }
                 });
             })
@@ -67,6 +71,7 @@
                         <a data-micromodal-trigger="modal-1" id="modal" class="calendar-modal">I've Done…</a>
                     </div>
                     @include('layouts.modal')
+                    @include('layouts.edit_modal')
                 </div>
             </article>
             <aside class="col-3">

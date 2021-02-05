@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStockTagsTable extends Migration
+class CreateStockCosmeticTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateStockTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('stock_tags', function (Blueprint $table) {
+        Schema::create('stock_cosmetic_tag', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->unsignedBigInteger('stock_cosmetic_id');
+            $table->unsignedBigInteger('tag_id');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateStockTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock_tags');
+        Schema::dropIfExists('stock_cosmetic_tag');
     }
 }

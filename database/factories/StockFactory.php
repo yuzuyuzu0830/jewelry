@@ -14,6 +14,5 @@ $factory->define(StockCosmetic::class, function (Faker $faker) {
         'brand' => $faker->realText($maxNbChars = 10, $indexSize = 5),
         'price' => $faker->numberBetween($min = 500, $max = 9000),
         'purchaseDate' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'main_category' => 'ベースメイク',
     ];
 });

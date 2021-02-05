@@ -10,6 +10,9 @@
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
+// jquery-ui
+@import '~jquery-ui/themes/base/all.css';
+
 @import 'top';
 @import 'auth';
 @import 'home';

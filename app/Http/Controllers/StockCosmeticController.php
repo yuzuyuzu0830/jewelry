@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\StockCosmetic;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Http\Requests\Stock;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class StockCosmeticController extends Controller
 {
@@ -71,27 +73,32 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
-        $stock_cosmetic->main_category = $request->input('main_category');
 
         // image
-        $form = $request->all();
-        if (isset($form['image'])) {
-            $file = $request->file('image');
-            //  getClientOrientalExtension()でファイルの拡張子を取得する
-            $extension = $file->getClientOriginalExtension();
-            $file_token = Str::random(32);
-            $filename = $file_token . '.' . $extension;
-            // 表示を行うときに画像名が必要になるため、ファイル名を再設定
-            $form['image'] = $filename;
-            $file->move('upload/stock_cosmetics', $filename);
-        }
+
+        $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . 'jpg', ['disk' => 's3']);
 
         // tag
         // #で始まる単語を取得し、$matchに多次元配列で格納される
         preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->tags, $match);
-        dd($match);
+        $tags=[];
+        foreach($match[1] as $tag)
+        {
+            $records = Tag::firstOrCreate(['name' => $tag]);
+            // $recordsを$tagsの配列に追加
+            array_push($tags, $records);
+        }
 
-        $stock_cosmetic->fill($form)->save();
+        $tags_id = [];
+        foreach($tags as $tag)
+        {
+            array_push($tags_id, $tag['id']);
+        }
+
+
+        $stock_cosmetic->save();
+
+        $stock_cosmetic->tags()->attach($tags_id);
 
         return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }
@@ -104,8 +111,8 @@ class StockCosmeticController extends Controller
      */
     public function show($id)
     {
-        //
         $stock_cosmetic = StockCosmetic::find($id);
+
         return view('stock_cosmetics.show_stock', compact('stock_cosmetic'));
 
     }
@@ -118,7 +125,6 @@ class StockCosmeticController extends Controller
      */
     public function edit($id)
     {
-        //
         $stock_cosmetic = StockCosmetic::find($id);
         return view('stock_cosmetics.edit_stock', compact('stock_cosmetic'));
     }
@@ -139,8 +145,6 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->color = $request->input('color');
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
-        $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
-
 
         $form = $request->all();
         if (isset($form['image'])) {
