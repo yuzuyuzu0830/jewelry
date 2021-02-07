@@ -24,7 +24,6 @@ class Stock extends FormRequest
     public function rules()
     {
         return [
-            //
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:1024',
             'product' => 'required|string|max:100',
             'color' => 'nullable|string|max:50',

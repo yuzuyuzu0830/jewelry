@@ -74,9 +74,10 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->price = $request->input('price');
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
 
+        $stock_cosmetic->save();
         // image
 
-        $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . 'jpg', ['disk' => 's3']);
+        $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
 
         // tag
         // #で始まる単語を取得し、$matchに多次元配列で格納される
@@ -96,7 +97,7 @@ class StockCosmeticController extends Controller
         }
 
 
-        $stock_cosmetic->save();
+
 
         $stock_cosmetic->tags()->attach($tags_id);
 
