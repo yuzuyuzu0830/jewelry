@@ -6,7 +6,7 @@
 日々の美容ケアや化粧品の管理など全てを、1つのアプリで行うことを目指したサービスです。
 
 # URL
-http://mighty-springs-27172.herokuapp.com/ <br>
+http://jewelry-0201.work/<br>
 
 右上のゲストログインボタンから会員登録なしでログインができます。
 
@@ -60,3 +60,4 @@ http://mighty-springs-27172.herokuapp.com/ <br>
 
 * 開発環境
     * MySQL 5.7.30
+    * AWS ( EC2, ELB, ACM, S3, RDS, Route53, VPC, IAM )
