@@ -31,7 +31,7 @@
                             <label for="price">購入価格</label><input id="price" type="text" class="stock-form price" name="price" placeholder="1,200" value="{{ $new_item->price }}">円
                         </div>
                         <div class="stock-group">
-                            <label for="purchase-date">購入日</label><input id="purchase-date" type="date" class="stock-form" name="start" value="{{ $new_item->start }}">
+                            <label for="purchase-date">発売日</label><input id="purchase-date" type="date" class="stock-form" name="start" value="{{ $new_item->start }}">
                         </div>
                         <div class="form-btn">
                             <input class="submit-btn mr-3" type="submit" value="変更する">
