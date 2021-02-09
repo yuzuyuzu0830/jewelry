@@ -50,7 +50,7 @@
                             document.getElementById("puff_edit").checked = true;
                         }
                         if (title.match(/顔のパック/)){
-                            document.getElementById("puck_edit").checked = true;
+                            document.getElementById("pack_edit").checked = true;
                         }
                         if (title.match(/ピーリング/)){
                             document.getElementById("peeling_edit").checked = true;
