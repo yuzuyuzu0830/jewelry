@@ -58,8 +58,6 @@
                         if (title.match(/トリートメント/)){
                             document.getElementById("treatment_edit").checked = true;
                         }
-                        document.getElementById("start_edit").value = info.start._i
-setTimeout(function() {alert(document.getElementById("start_edit").value)}, 1000)
                         MicroModal.show('modal-2');
                     }
                 });
