@@ -24,9 +24,6 @@
                         </div>
                     </div>
                     <div class="tasks-group">
-                        <label>登録する日付</label><input type="date" id="start_edit" class="task-form" name="start" value="2021-02-27">
-                    </div>
-                    <div class="tasks-group">
                         <label>文字の色<input type="color" class="task-form" name="textColor"></label>
                     </div>
 
