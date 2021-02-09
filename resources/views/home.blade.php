@@ -42,7 +42,24 @@
 
                     eventClick: function(info) {
                         document.getElementById("id").value = info.id;
-                        document.getElementById("start").value = info.start;
+                        var title = info.title;
+                        if(title.match(/ブラシ洗浄/)) {
+                            document.getElementById("brush_edit").checked = true
+                        }
+                        if (title.match(/パフ洗浄/)){
+                            document.getElementById("puff_edit").checked = true;
+                        }
+                        if (title.match(/顔のパック/)){
+                            document.getElementById("puck_edit").checked = true;
+                        }
+                        if (title.match(/ピーリング/)){
+                            document.getElementById("peeling_edit").checked = true;
+                        }
+                        if (title.match(/トリートメント/)){
+                            document.getElementById("treatment_edit").checked = true;
+                        }
+                        document.getElementById("start_edit").value = info.start._i
+setTimeout(function() {alert(document.getElementById("start_edit").value)}, 1000)
                         MicroModal.show('modal-2');
                     }
                 });

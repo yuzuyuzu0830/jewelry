@@ -24,9 +24,9 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 // カレンダー登録
-    Route::get('/home', 'DoneTaskController@index');
-    Route::post('/store', 'DoneTaskController@store')->name('done_task');
-    Route::post('/editEventDate', 'DoneTaskController@editEventDate')->name('editEvent');
+Route::get('/home', 'DoneTaskController@index');
+Route::post('/store', 'DoneTaskController@store')->name('done_task');
+Route::post('/editEventDate', 'DoneTaskController@editEventDate')->name('editEvent');
 
 // 所持しているコスメの一覧
 Route::group(['prefix'=>'stock_cosmetics', 'middleware' => 'auth'], function () {
