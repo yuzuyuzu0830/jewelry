@@ -45,7 +45,7 @@
                             <label for="price">購入価格</label><input id="price" class="price mr-2" type="text" name="price" placeholder="1,200">円
                         </div>
                         <div class="group">
-                            <label for="start">購入日</label><input id="start" type="date" name="start">
+                            <label for="start">発売日</label><input id="start" type="date" name="start">
                         </div>
                         <div class="group">
                             <label for="item-tag">タグをつける</label><input id="item-tag" type="text" name="labels" value="{{ old('labels') }}" placeholder="#リップ">

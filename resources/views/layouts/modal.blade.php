@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="tasks-group">
-                        <label>登録する日付</label><input type="date" class="task-form" name="start">
+                        <label>登録する日付</label><input id="start_edit" type="date" class="task-form" name="start" value="">
                     </div>
                     <div class="tasks-group">
                         <label>文字の色<input type="color" class="task-form" name="textColor"></label>

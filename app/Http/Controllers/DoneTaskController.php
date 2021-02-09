@@ -22,6 +22,7 @@ class DoneTaskController extends Controller
         {
             $data = DoneTask::select('id','title', 'start', 'textColor')->where('user_id', $user_id)->get();
             return response()->json($data);
+
         }
 
         return view('home');
@@ -55,7 +56,7 @@ class DoneTaskController extends Controller
         $task = DoneTask::find($request->input('id'));
 
         $task->start = $request->input('start');
-        dd('test');
+
         $task->textColor = $request->input('textColor');
         if(isset($_POST['title']))
         {

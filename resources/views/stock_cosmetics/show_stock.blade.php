@@ -12,7 +12,7 @@
                             @if($stock_cosmetic->image === null)
                                 <img class="show-img" src="{{ asset('img/no-image.jpg') }}">
                             @else
-                                <img class="show-img" src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="cosmetic-image">
+                                <img src="{{ Storage::disk('s3')->url("/stock/{$stock_cosmetic->id}.jpg") }}">
                             @endif
                         </div>
                         <div class="show-content">

@@ -75,8 +75,8 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
 
         $stock_cosmetic->save();
-        // image
 
+        // image
         $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
 
         // tag
@@ -95,9 +95,6 @@ class StockCosmeticController extends Controller
         {
             array_push($tags_id, $tag['id']);
         }
-
-
-
 
         $stock_cosmetic->tags()->attach($tags_id);
 
