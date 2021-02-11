@@ -10,9 +10,9 @@
                     <div class="show-detail">
                         <div class="show-img-form">
                             @if($stock_cosmetic->image === null)
-                                <img class="show-img" src="{{ asset('img/no-image.jpg') }}">
+                                <img class="show-img" src="{{ asset('img/no-image.jpg') }}" alt="no-image">
                             @else
-                                <img src="{{ Storage::disk('s3')->url("/stock/{$stock_cosmetic->id}.jpg") }}">
+                                <img class="show-img" src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
                             @endif
                         </div>
                         <div class="show-content">

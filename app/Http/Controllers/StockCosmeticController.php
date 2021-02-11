@@ -77,7 +77,12 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->save();
 
         // image
-        $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $path = $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
+            $stock_cosmetic->image = $path;
+            $stock_cosmetic->save();
+        }
+
 
         // tag
         // #で始まる単語を取得し、$matchに多次元配列で格納される
@@ -144,22 +149,15 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
 
-        $form = $request->all();
-        if (isset($form['image'])) {
-            $file = $request->file('image');
-            //  getClientOrientalExtension()でファイルの拡張子を取得する
-            $extension = $file->getClientOriginalExtension();
-            $file_token = Str::random(32);
-            $filename = $file_token . '.' . $extension;
-            // 表示を行うときに画像名が必要になるため、ファイル名を再設定
-            $form['image'] = $filename;
-            $file->move('upload/stock_cosmetics', $filename);
+        // image
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $path = $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
+            $stock_cosmetic->image = $path;
+            $stock_cosmetic->save();
         }
-        $stock_cosmetic->fill($form)->save();
 
         return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
     }
-
     /**
      * Remove the specified resource from storage.
      *

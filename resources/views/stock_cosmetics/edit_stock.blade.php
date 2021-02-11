@@ -4,15 +4,15 @@
 <div class="main row">
     <article class="col-9">
         <div class="container pr-5 pl-5">
-            <h1 class="mt-5 mb-5">Edit my data</h1>
+            <h1 class="mt-5 mb-5">Editing my data</h1>
             <div class="white-back">
                 <form id="expire-form" class="edit-form" method="POST" action="{{ route('update_stock', ['id' => $stock_cosmetic->id]) }}" enctype="multipart/form-data">
                     @csrf
                     <div edit-img-form>
                         @if($stock_cosmetic->image === null)
-                            <img class="edit-img" src="{{ asset('img/no-image.jpg') }}">
+                            <img class="edit-img" src="{{ asset('img/no-image.jpg') }}" alt="no-image">
                         @else
-                        <img class="edit-img" src="{{ asset('upload/stock_cosmetics/' . $stock_cosmetic->image) }}" alt="Non-Image">
+                            <img class="edit-img" src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
                         @endif
                         <input type="file" class="stock-form" name="image">
                     </div>
