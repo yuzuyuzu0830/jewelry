@@ -41,6 +41,7 @@
                     aspectRatio: 2,
 
                     eventClick: function(info) {
+                        console.log(info.start);
                         document.getElementById("id").value = info.id;
                         var title = info.title;
                         if(title.match(/ブラシ洗浄/)) {
@@ -58,6 +59,8 @@
                         if (title.match(/トリートメント/)){
                             document.getElementById("treatment_edit").checked = true;
                         }
+                        document.getElementById("start_edit").value = info.start._i
+                        document.getElementById("color_edit").value = info.textColor
                         MicroModal.show('modal-2');
                     }
                 });
