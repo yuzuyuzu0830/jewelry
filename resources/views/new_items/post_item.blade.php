@@ -27,7 +27,6 @@
                         @csrf
                         <div class="upload-button">ファイルを選択する
                             <input type="file" name="image" onchange="uv.style.display='inline-block'; uv.value = this.value;">
-                            <input type="text" id="uv" class="upload-value" disabled>
                         </div>
                         <div class="group">
                             <label for="name">商品名</label>

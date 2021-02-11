@@ -10,9 +10,9 @@
                     <div class="show-detail">
                         <div class="show-img-form">
                             @if($new_item->image === null)
-                                <img src="{{ asset('img/no-image2.jpg') }}" alt="no-image">
+                                <img class="show-img" src="{{ asset('img/no-image2.jpg') }}" alt="no-image">
                             @else
-                                <img src="{{ asset('upload/new_items/' . $new_item->image) }}" alt="cosmetic-image">
+                                <img class="show-img" src="{{ asset('upload/new_items/' . $new_item->image) }}" alt="cosmetic-image">
                             @endif
                         </div>
                         <div class="show-content">
