@@ -9,7 +9,7 @@
                 <div class="white-back">
                     <div class="show-detail">
                         <div class="show-img-form">
-                            @if($stock_cosmetic->image === null)
+                        @if($stock_cosmetic->image === null)
                                 <img class="show-img" src="{{ asset('img/no-image.jpg') }}">
                             @else
                                 <img src="{{ Storage::disk('s3')->url("/stock/{$stock_cosmetic->id}.jpg") }}">

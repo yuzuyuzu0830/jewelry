@@ -75,9 +75,12 @@ class StockCosmeticController extends Controller
         $stock_cosmetic->purchaseDate = $request->input('purchaseDate');
 
         $stock_cosmetic->save();
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $path = $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
+            $stock_cosmetic->image = $path;
+            $stock_cosmetic->save();
+        }
 
-        // image
-        $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
 
         // tag
         // #で始まる単語を取得し、$matchに多次元配列で格納される
