@@ -9,10 +9,10 @@
             <div class="list">
                 @foreach($stock_cosmetics as $stock_cosmetic)
                 <div class="stock-items mb-5">
-                @if($stock_cosmetic->image === null)
-                    <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
+                    @if($stock_cosmetic->image === null)
+                        <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
                     @else
-                    <img src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
+                        <img src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
                     @endif
                     <div class="stock-items-text pt-3 pb-2 pr-3 pl-3">
                         <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>

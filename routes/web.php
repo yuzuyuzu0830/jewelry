@@ -27,6 +27,7 @@ Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 Route::get('/home', 'DoneTaskController@index');
 Route::post('/store', 'DoneTaskController@store')->name('done_task');
 Route::post('/editEventDate', 'DoneTaskController@editEventDate')->name('editEvent');
+Route::post('/deleteEventDate/{id}', ('DoneTaskController@deleteEventDate'))->name('deleteEvent');
 
 // 所持しているコスメの一覧
 Route::group(['prefix'=>'stock_cosmetics', 'middleware' => 'auth'], function () {
