@@ -24,7 +24,11 @@
                         </div>
                     </div>
                     <div class="tasks-group">
-                        <label>文字の色<input type="color" class="task-form" name="textColor"></label>
+                        <label for="start_edit">日付</label>
+                        <input type="date" id="start_edit" class="task-form" name="start" value="">
+                    </div>
+                    <div class="tasks-group">
+                        <label>文字の色<input id="color_edit" type="color" class="task-form" name="textColor" value=""></label>
                     </div>
 
                     <div class="modal-btn">
