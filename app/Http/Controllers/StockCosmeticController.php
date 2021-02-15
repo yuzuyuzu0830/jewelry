@@ -19,7 +19,7 @@ class StockCosmeticController extends Controller
      */
 
     // formの値を取得するため、引数にRequest $requestを指定
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
         $search = $request->input('search');
 
@@ -36,7 +36,11 @@ class StockCosmeticController extends Controller
             {
                 $stocks
                     ->where('product', 'like', '%'.$value.'%')
-                    ->orWhere('brand', 'like', '%'.$value.'%');
+                    ->orWhere('brand', 'like', '%'.$value.'%')
+                    ->orWhereHas('tags', function ($query) use ($value){
+                        $query->where('name', 'like', '%' . $value . '%');
+                    });
+
             }
         }
 
@@ -44,7 +48,7 @@ class StockCosmeticController extends Controller
         $stock_cosmetics = $stocks->paginate(15);
 
         return view('stock_cosmetics.list_of_stock', ['user_id' => $user_id, 'stock_cosmetics' => $stock_cosmetics]);
-    }
+}
 
     /**
      * Show the form for creating a new resource.
@@ -82,7 +86,6 @@ class StockCosmeticController extends Controller
             $stock_cosmetic->image = $path;
             $stock_cosmetic->save();
         }
-
 
         // tag
         // #で始まる単語を取得し、$matchに多次元配列で格納される
