@@ -68,4 +68,12 @@ class DoneTaskController extends Controller
 
         return redirect('/home');
     }
+
+    public function deleteTask(Request $request) {
+        $task = DoneTask::findOrFail($request->input('id'));
+        $task->delete();
+
+        return redirect('/home');
+    }
+
 }
