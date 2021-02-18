@@ -64,7 +64,15 @@
                         MicroModal.show('modal-2');
                     }
                 });
-            })
+                $("#delete-task").on("click", function() {
+                    var form = document.getElementById("delete-task-form"); // 削除フォーム
+                    var eventId = document.getElementById("id").value; // 削除対象のidを更新フォームから取得
+                    //var event = calendar.getElementById(eventId);
+                    //event.remove();
+                    form.elements['id'].value = eventId; // 削除対象のidを削除フォームにもセット
+                    form.submit(); // 削除フォームを送信させる
+                    });
+            });
         </script>
     </head>
     <body>

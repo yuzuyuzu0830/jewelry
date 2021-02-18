@@ -29,7 +29,7 @@
                     </div>
                     <div class="modal-btn">
                         <button class="modal__btn modal__btn-primary mr-3"　type="submit">登録</button>
-                        <a id="expire-btn"　class="modal__btn" data-micromodal-close aria-label="Close this dialog window">キャンセル</a>
+                        <a id="expire-btn"　class="modal__btn  cancel-btn" data-micromodal-close aria-label="Close this dialog window">キャンセル</a>
                     </div>
                 </form>
             </main>

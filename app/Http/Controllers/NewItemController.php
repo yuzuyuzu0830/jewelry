@@ -32,7 +32,10 @@ class NewItemController extends Controller
             {
                 $items
                     ->where('title', 'like', '%'.$value.'%')
-                    ->orWhere('brand', 'like', '%'.$value.'%');
+                    ->orWhere('brand', 'like', '%'.$value.'%')
+                    ->orWhereHas('labels', function ($query) use ($value){
+                        $query->where('name', 'like', '%' . $value . '%');
+                    });
             }
         }
 
