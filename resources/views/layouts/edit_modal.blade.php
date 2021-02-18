@@ -33,9 +33,14 @@
 
                     <div class="modal-btn">
                         <button id="task-update" class="modal__btn modal__btn-primary mr-3" type="submit">変更する</button>
-                        <a id="expire-btn"　class="modal__btn" data-micromodal-close aria-label="Close this dialog window">キャンセル</a>
-                    </div>
+
                 </form>
+                <form id="delete-task-form" method="POST" action="{{ route('deleteTask') }}">
+                    @csrf
+                    <input type="hidden" name="id">
+                    <a href="#" id="delete-task" class="cancel-btn">削除する</a>
+                </form>
+                </div>
             </main>
         </div>
     </div>
