@@ -106,9 +106,8 @@ class StockCosmeticController extends Controller
 
         $stock_cosmetic->tags()->attach($tags_id);
 
-        return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics');
+        return redirect('stock_cosmetics/list_of_stock/{user_id}/stock_cosmetics')->with('flash_message', '登録しました');
     }
-
     /**
      * Display the specified resource.
      *
@@ -142,7 +141,7 @@ class StockCosmeticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Stock $request, $id)
     {
         //
         $stock_cosmetic = StockCosmetic::find($id);
