@@ -7,6 +7,7 @@ use App\Models\NewItem;
 use App\Models\Label;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\Item;
 
 class NewItemController extends Controller
 {
@@ -61,7 +62,7 @@ class NewItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Item $request)
     {
         $new_item = new NewItem();
 
@@ -138,7 +139,7 @@ class NewItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Item $request, $id)
     {
         $new_item = NewItem::find($id);
 
