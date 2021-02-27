@@ -25,7 +25,6 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <!-- FullCalendar -->
         <script>
             $(document).ready(function () {
                 $('#calendar').fullCalendar({
@@ -39,7 +38,6 @@
                     events: '/home',
                     contentHeight: 550,
                     aspectRatio: 2,
-
                     eventClick: function(info) {
                         document.getElementById("id").value = info.id;
                         var title = info.title;
@@ -64,13 +62,13 @@
                     }
                 });
                 $("#delete-task").on("click", function() {
-                    var form = document.getElementById("delete-task-form"); // 削除フォーム
-                    var eventId = document.getElementById("id").value; // 削除対象のidを更新フォームから取得
-                    //var event = calendar.getElementById(eventId);
-                    //event.remove();
-                    form.elements['id'].value = eventId; // 削除対象のidを削除フォームにもセット
-                    form.submit(); // 削除フォームを送信させる
-                    });
+                var form = document.getElementById("delete-task-form");
+                // 削除対象のidを更新フォームから取得
+                var eventId = document.getElementById("id").value;
+                // 削除対象のidを削除フォームにもセット
+                form.elements['id'].value = eventId;
+                form.submit();
+                });
             });
         </script>
     </head>
@@ -120,8 +118,6 @@
             @include('sidebar.logout')
             </aside>
         </div>
-        <script>
-            MicroModal.init();
-        </script>
+        <script src="{{ mix('js/modal.js') }}"></script>
     </body>
 </html>
