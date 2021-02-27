@@ -40,29 +40,21 @@ class DoneTaskController extends Controller
         $task->user_id = Auth::id();
         $task->start = $request->input('start');
         $task->textColor = $request->input('textColor');
-        if(isset($_POST['title']))
-        {
-            $title = implode(',', $_POST['title']);
-            $task->title = $title;
-        }
+        $title = $request->input('title');
+        $task->title = implode(',', $title);
 
         $task->save();
 
         return redirect('/home');
     }
 
-    public function editEventDate(Request $request)
+    public function editEventDate(Done $request)
     {
         $task = DoneTask::find($request->input('id'));
-
         $task->start = $request->input('start');
-
         $task->textColor = $request->input('textColor');
-        if(isset($_POST['title']))
-        {
-            $title = implode(',', $_POST['title']);
-            $task->title = $title;
-        }
+        $title = $request->input('title');
+        $task->title = implode(',', $title);
 
         $task->save();
 

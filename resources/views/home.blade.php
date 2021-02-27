@@ -41,7 +41,6 @@
                     aspectRatio: 2,
 
                     eventClick: function(info) {
-                        console.log(info.start);
                         document.getElementById("id").value = info.id;
                         var title = info.title;
                         if(title.match(/ブラシ洗浄/)) {
