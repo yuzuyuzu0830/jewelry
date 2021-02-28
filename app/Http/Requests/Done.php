@@ -21,6 +21,13 @@ class Done extends FormRequest
      *
      * @return array
      */
+     protected function prepareForValidation()
+    {
+    $this->merge([
+        'title' => array_filter($this->title),
+    ]);
+    }
+
     public function rules()
     {
         return [
