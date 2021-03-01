@@ -8,7 +8,8 @@ class Tag extends Model
 {
     protected $fillable = ['name'];
 
-    public function stock_cosmetics () {
+    public function stock_cosmetics ()
+    {
         return $this->belongsToMany('App\Models\StockCosmetic');
     }
 }

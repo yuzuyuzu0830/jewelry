@@ -37,7 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function stock_cosmetics() {
+    public function stock_cosmetics()
+    {
         return $this->hasMany('App\Models\StockCosmetic', 'App\Models\DoneTask', 'App\Models\NewItem');
     }
 }
