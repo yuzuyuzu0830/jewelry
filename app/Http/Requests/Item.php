@@ -13,7 +13,7 @@ class Item extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class Item extends FormRequest
     {
         return [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:1024',
-            'product' => 'required|string|max:100',
+            'title' => 'required|string|max:100',
             'color' => 'nullable|string|max:50',
             'brand' => 'nullable|string|max:100',
             'price' => 'nullable|numeric',

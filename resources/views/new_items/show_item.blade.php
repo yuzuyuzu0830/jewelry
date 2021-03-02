@@ -38,9 +38,9 @@
                                     @csrf
                                     <input class="submit-btn" type="submit" value="編集する">
                                 </form>
-                                <form method="POST" action="{{ route('destroy_item', ['id' => $new_item->id]) }}" id="delete_{{ $new_item->id }}">
+                                <form method="POST" action="{{ route('destroy_item', ['id' => $new_item->id]) }}">
                                     @csrf
-                                    <span class="marker"><a href="#" class="cancel-btn" data-id="{{ $new_item->id }}" onclick="deletePost(this);">削除する</a></span>
+                                    <span class="delete-marker"><input class="delete-btn" type="submit" value="削除する"></span>
                                 </form>
                             </div>
                         </div>
