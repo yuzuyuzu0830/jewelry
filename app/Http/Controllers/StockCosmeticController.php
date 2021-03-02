@@ -117,9 +117,7 @@ class StockCosmeticController extends Controller
     public function show($id)
     {
         $stock_cosmetic = StockCosmetic::find($id);
-
         return view('stock_cosmetics.show_stock', compact('stock_cosmetic'));
-
     }
 
     /**
@@ -143,14 +141,13 @@ class StockCosmeticController extends Controller
      */
     public function update(Stock $request, $id)
     {
-        //
         $stock_cosmetic = StockCosmetic::find($id);
 
         $stock_cosmetic->product = $request->input('product');
         $stock_cosmetic->color = $request->input('color');
         $stock_cosmetic->brand = $request->input('brand');
         $stock_cosmetic->price = $request->input('price');
-
+        $stock_cosmetic->save();
         // image
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $path = $request->image->storePubliclyAs('/stock', $stock_cosmetic->id . '.jpg', ['disk' => 's3']);
@@ -168,7 +165,6 @@ class StockCosmeticController extends Controller
      */
     public function destroy($id)
     {
-        //
         $stock_cosmetic = StockCosmetic::find($id);
         $stock_cosmetic->delete();
 
