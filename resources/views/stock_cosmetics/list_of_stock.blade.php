@@ -5,21 +5,28 @@
 <div class="main row">
     <article class="col-9">
         <div class="container pr-4 pl-5">
+            <!-- フラッシュメッセージ -->
+    @if (session('flash_message'))
+            <div class="flash_message">
+                {{ session('flash_message') }}
+            </div>
+        @endif
             <h1 class="mt-5 mb-5">Cosmetics I have</h1>
             <div class="list">
                 @foreach($stock_cosmetics as $stock_cosmetic)
-                <div class="stock-items mb-5">
-                    @if($stock_cosmetic->image === null)
-                        <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
-                    @else
-                        <img src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
-                    @endif
-                    <div class="stock-items-text pt-3 pb-2 pr-3 pl-3">
-                        <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>
-                        <span class="marker"><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">詳細/編集</a></span>
+                    <div class="stock-items mb-5">
+                        @if($stock_cosmetic->image === null)
+                            <img src="{{ asset('img/no-image.jpg') }}" alt="no-image">
+                        @else
+                            <img src="{{ Storage::disk('s3')->url("stock/{$stock_cosmetic->id}.jpg") }}">
+                        @endif
+                        <div class="stock-items-text pt-3 pb-2 pr-3 pl-3">
+                            <p>{{ $stock_cosmetic->product  . '/'  .$stock_cosmetic->brand }}</p>
+                            <span class="marker"><a href="{{ route('show_stock', ['id' => $stock_cosmetic->id]) }}">詳細/編集</a></span>
+                        </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach
+
             </div>
             <section class="page-bottom">
                 <div class="page-link">
